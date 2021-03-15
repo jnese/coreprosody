@@ -94,7 +94,7 @@ With expertise in curriculum-based measurement and teacher professional developm
 
 ```{r eric, results="asis"}
 tibble(
-  image = "<img src='images/' style='border-radius: 50%; width: 100px'>",
+  image = "<img src='images/larson.png' style='border-radius: 50%; width: 100px'>",
   name = "[**Eric Larson, Ph.D.**](https://s2.smu.edu/~eclarson/index.html)<a href='mailto:eclarson@lyle.smu.edu'> <i class='fa fa-envelope'></i></a><br>Computer Engineering<br>",
   univ = "<img src='images/smu.png' style='border-radius: 0; width: 100px'>"
 ) %>% 
@@ -106,7 +106,7 @@ tibble(
 
 ```{r nelis, results="asis"}
 tibble(
-  image = "<img src='images/goal.png' style='border-radius: 50%; width: 90px'>",
+  image = "<img src='images/potgieter.jpg' style='border-radius: 50%; width: 90px'>",
   name = "[**Cornelis Potgieter, Ph.D.**](http://www.cjpotgieter.com/)<a href='mailto:c.potgieter@tcu.edu'> <i class='fa fa-envelope'></i></a><br>Statistics Consultant<br>",
   univ = "<img src='images/tcu.svg' style='border-radius: 0; width: 100px'>"
 ) %>% 
@@ -147,7 +147,7 @@ Xinyi is an Assistant Professor in the Department of Computer Science and Techno
 
 ```{r noboru, results="asis"}
 tibble(
-  image = "<img src='images/goal.png' style='border-radius: 50%; width: 90px'>",
+  image = "<img src='images/matsuda.jpg' style='border-radius: 50%; width: 90px'>",
   name = "[**Noboru Matsuda, Ph.D.**](https://people.engr.ncsu.edu/nmatsud/)<a href='mailto:noboru.matsuda@ncsu.edu'> <i class='fa fa-envelope'></i></a><br>Artificial Intelligence Consultant<br>",
   univ = "<img src='images/ncsu.png' style='border-radius: 0; width: 100px'>"
 ) %>% 
