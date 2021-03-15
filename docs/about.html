@@ -444,8 +444,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     top: 0;
   }
   
+  /* adjust viewport for navbar height */
+  /* helps vertically center bootstrap (non-distill) content */
+  .min-vh-100 {
+    min-height: calc(100vh - 100px) !important;
+  }
+  
   </style>
   
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -553,19 +560,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
             var results = fuse.search(query, searchOptions);
             callback(results
               .map(function(result) { return result.item; })
-              .filter(function(item) { return !!item.description; })
             );
           },
           templates: {
             suggestion: function(suggestion) {
+              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+                : '';
               var html = `
                 <div class="search-item">
                   <h3>${suggestion.title}</h3>
                   <div class="search-item-description">
-                    ${suggestion.description}
+                    ${suggestion.description || ''}
                   </div>
                   <div class="search-item-preview">
-                    <img src="${suggestion.preview ? offsetURL(suggestion.preview) : ''}"</img>
+                    ${img}
                   </div>
                 </div>
               `;
@@ -588,6 +597,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   
   <style type="text/css">
+  
+  .nav-search {
+    font-size: x-small;
+  }
   
   /* Algolioa Autocomplete */
   
@@ -663,6 +676,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
   
   .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+    font-size: 1rem;
     margin-block-start: 0;
     margin-block-end: 5px;
   }
@@ -890,6 +904,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-decoration: underline;
   }
   
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+  
   @media(min-width: 768px) {
   
   d-article pre,
@@ -1044,6 +1063,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   div.hanging-indent{
     margin-left: 1em; text-indent: -1em;
+  }
+  
+  /* Citation hover box */
+  
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+  
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
   }
   
   
@@ -1711,7 +1741,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       var layout = $(this).attr('data-layout');
   
       // apply layout to markdown level block elements
-      var elements = $(this).children().not('div.sourceCode, pre, script');
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
       elements.each(function(i, el) {
         var layout_div = $('<div class="' + layout + '"></div>');
         if (layout_div.hasClass('shaded')) {
@@ -1826,6 +1856,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
+  
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
   
       // clear polling timer
       clearInterval(tid);
@@ -2128,15 +2172,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --title-size:       24px;
     --text-color:       rgba(255, 255, 255, 0.8);
     --text-size:        15px;
-    --hover-color:      #f5c04a; /* edited from white; */
-    --bkgd-color:       #c03728; /* edited from #0F2E3D */
+    --hover-color:      #C69932; /*#f5c04a; /* edited from white; */
+    --bkgd-color:       #A5352A; /* #c03728; /* edited from #0F2E3D */
   }
   
   .distill-site-footer {
     --text-color:       rgba(255, 255, 255, 0.8);
     --text-size:        15px;
-    --hover-color:      #f5c04a; /* edited from white; */
-    --bkgd-color:       #c03728; /* edited from #0F2E3D*/
+    --hover-color:      #6699AC; /*#f5c04a; /* edited from white; */
+    --bkgd-color:       #A5352A; /*#c03728; /* edited from #0F2E3D*/
   }
   
   /*-- Additional custom styles --*/
@@ -2147,13 +2191,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     background-color: #fffeea;
   }
   
+  .dropdown-content a:hover {
+    background-color: #3486b8;
+  }
+  
   d-title {
-    background-image: url("images/headerfoo.png");
+    background-image: url("images/header_1349213000.jpg");
   /*    background-position: 100% 100%; */
   	  background-repeat: no-repeat;
   	  background-size: cover;
   	  width: 100%;
-  	  height: 150px;
+  	  height: 175px;
   /*	  background-attachment: fixed; */
   /*background-color: #e68c7c; */
   }
@@ -2165,7 +2213,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
   
   
-  */</style>
+  */
+  
+  
+  </style>
   <style type="text/css">
   /* base style */
   
@@ -2191,7 +2242,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   d-article div.sourceCode code,
   d-article pre code {
-  	font-family: var(--mono-font), var(--mono-default);
+    font-family: var(--mono-font), var(--mono-default);
   }
   
   
@@ -2216,76 +2267,78 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
   
   /*-- BODY --*/
-  /* only text inside of <p> tags */
-  d-article > p {
+  d-article > p,  /* only text inside of <p> tags */
+  d-article > ul, /* lists */
+  d-article > ol {
     color: var(--body-color, rgba(0, 0, 0, 0.8));
     font-size: var(--body-size, 1.06rem);
   }
   
+  
   /*-- CODE --*/
   d-article div.sourceCode code,
   d-article pre code {
-  	font-size: var(--code-size, 14px);
+    font-size: var(--code-size, 14px);
   }
   
   /*-- ASIDE --*/
   d-article aside {
-  	font-size: var(--aside-size, 12px);
-  	color: var(--aside-color, rgba(0, 0, 0, 0.6));
+    font-size: var(--aside-size, 12px);
+    color: var(--aside-color, rgba(0, 0, 0, 0.6));
   }
   
   /*-- FIGURE CAPTIONS --*/
   figure .caption,
   figure figcaption,
   .figure .caption {
-  	font-size: var(--fig-cap-size, 13px);
-  	color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+    font-size: var(--fig-cap-size, 13px);
+    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
   }
   
   /*-- METADATA --*/
   d-byline h3 {
-  	font-size: var(--heading-size, 0.6rem);
-  	color: var(--heading-color, rgba(0, 0, 0, 0.5));
+    font-size: var(--heading-size, 0.6rem);
+    color: var(--heading-color, rgba(0, 0, 0, 0.5));
   }
   
   d-byline {
-  	font-size: var(--body-size, 0.8rem);
-  	color: var(--body-color, rgba(0, 0, 0, 0.8));
+    font-size: var(--body-size, 0.8rem);
+    color: var(--body-color, rgba(0, 0, 0, 0.8));
   }
   
   d-byline a,
   d-article d-byline a {
-  	color: var(--body-color, rgba(0, 0, 0, 0.8));
+    color: var(--body-color, rgba(0, 0, 0, 0.8));
   }
   
   /*-- TABLE OF CONTENTS --*/
   .d-contents nav h3 {
-  	font-size: var(--heading-size, 18px);
+    font-size: var(--heading-size, 18px);
   }
   
   .d-contents nav a {
-  	font-size: var(--contents-size, 13px);
+    font-size: var(--contents-size, 13px);
   }
   
   /*-- APPENDIX --*/
   d-appendix h3 {
     font-size: var(--heading-size, 15px);
-  	color: var(--heading-color, rgba(0, 0, 0, 0.65));
+    color: var(--heading-color, rgba(0, 0, 0, 0.65));
   }
   
   d-appendix {
     font-size: var(--text-size, 0.8em);
-  	color: var(--text-color, rgba(0, 0, 0, 0.5));
+    color: var(--text-color, rgba(0, 0, 0, 0.5));
   }
   
   d-appendix d-footnote-list a.footnote-backlink {
-  	color: var(--text-color, rgba(0, 0, 0, 0.5));
+    color: var(--text-color, rgba(0, 0, 0, 0.5));
   }
   
   /*-- WEBSITE HEADER + FOOTER --*/
   .distill-site-header .title {
-  	font-size: var(--title-size, 18px);
-  	font-family: var(--navbar-font), var(--heading-default);
+    font-size: var(--title-size, 18px);
+    font-family: var(--navbar-font), var(--heading-default);
   }
   
   .distill-site-header a,
@@ -2293,27 +2346,36 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-family: var(--navbar-font), var(--heading-default);
   }
   
-  .distill-site-header a:hover {
-  	color: var(--hover-color, white);
+  .nav-dropdown .nav-dropbtn {
+    color: var(--text-color, rgba(255, 255, 255, 0.8));
+    font-size: var(--text-size, 15px);
+  }
+  
+  .distill-site-header a:hover,
+  .nav-dropdown:hover .nav-dropbtn {
+    color: var(--hover-color, white);
   }
   
   .distill-site-header {
-  	font-size: var(--text-size, 15px);
-  	color: var(--text-color, rgba(255, 255, 255, 0.8));
-  	background-color: var(--bkgd-color, #0F2E3D);
+    font-size: var(--text-size, 15px);
+    color: var(--text-color, rgba(255, 255, 255, 0.8));
+    background-color: var(--bkgd-color, #0F2E3D);
   }
   
   .distill-site-footer {
-  	font-size: var(--text-size, 15px);
-  	color: var(--text-color, rgba(255, 255, 255, 0.8));
-  	background-color: var(--bkgd-color, #0F2E3D);
+    font-size: var(--text-size, 15px);
+    color: var(--text-color, rgba(255, 255, 255, 0.8));
+    background-color: var(--bkgd-color, #0F2E3D);
   }
   
   .distill-site-footer a:hover {
-  	color: var(--hover-color, white);
+    color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
   <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
   <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
@@ -2390,7 +2452,7 @@ Prosody
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><img src='images/kamata.jpg' style='border-radius: 50%; width: 100px'></td>
+<td style="text-align: left;"><img src='images/kamata.jpg' style='border-radius: 50%; width: 90px'></td>
 <td style="text-align: left;"><a href=""><strong>Akihito Kamata, Ph.D.</strong></a><a href='mailto:akamata@smu.edu'> <i class='fa fa-envelope'></i></a><br>Co-Principal Investigator<br></td>
 <td style="text-align: left;"><img src='images/smu.png' style='border-radius: 0; width: 100px'></td>
 </tr>
@@ -2423,7 +2485,8 @@ Prosody
 </tbody>
 </table>
 </div>
-<p>As Co-PI of CORE + Prosody, Leilani shares responsibility for all aspects of the project, leads the development of the reading comprehension questions, and co-leads the Comprehension &amp; Cognitive Load Studies.</p>
+<p>Leilani is a Research Assistant Professor in the College of Education at the University of Oregon. She obtained her Ph.D. in Educational Psychology from the University of California, Riverside.She has been the Principal or Co-Principal Investigator of nearly $3 million dollars in federally funded projects, and more than $50,000 in internal funding, to support teachers’ assessment-guided decision-making for preventing reading difficulties and enhance children’s reading development.</p>
+<p>Leilani has extensive experience working in classroom settings, particularly in the area of literacy instruction, including teaching, observation, and quantitative research. As Co-PI of CORE + Prosody, Leilani shares responsibility for all aspects of the project, leads the development of the reading comprehension questions, and co-leads the Comprehension &amp; Cognitive Load Studies.</p>
 <hr />
 <div class="layout-chunk" data-layout="l-body">
 <table>
@@ -2443,7 +2506,7 @@ Prosody
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><img src='images/' style='border-radius: 50%; width: 100px'></td>
+<td style="text-align: left;"><img src='images/larson.png' style='border-radius: 50%; width: 100px'></td>
 <td style="text-align: left;"><a href="https://s2.smu.edu/~eclarson/index.html"><strong>Eric Larson, Ph.D.</strong></a><a href='mailto:eclarson@lyle.smu.edu'> <i class='fa fa-envelope'></i></a><br>Computer Engineering<br></td>
 <td style="text-align: left;"><img src='images/smu.png' style='border-radius: 0; width: 100px'></td>
 </tr>
@@ -2455,15 +2518,28 @@ Prosody
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><img src='images/goal.png' style='border-radius: 50%; width: 90px'></td>
+<td style="text-align: left;"><img src='images/potgieter.jpg' style='border-radius: 50%; width: 100px'></td>
 <td style="text-align: left;"><a href="http://www.cjpotgieter.com/"><strong>Cornelis Potgieter, Ph.D.</strong></a><a href='mailto:c.potgieter@tcu.edu'> <i class='fa fa-envelope'></i></a><br>Statistics Consultant<br></td>
-<td style="text-align: left;"><img src='images/tcu.svg' style='border-radius: 0; width: 100px'></td>
+<td style="text-align: left;"><img src='images/tcu.svg' style='border-radius: 0; width: 80px'></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>Cornelis received his Ph.D. in Statistics from the University of Johannesburg in 2009. He is currently an Assistant Professor in the Department of Mathematics at Texas Christian University, and also holds an appointment as Visiting Senior Research Associate in the Department of Statistics at the University of Johannesburg, South Africa. His primary research interests are nonparametric statistics and educational (psychometric) measurement, focusing on the development of new methodology in the areas of treatment effect estimation, measurement error &amp; latent variable modeling, and capturing asymmetry in data using generalized skew-symmetric distributions.</p>
 <p>Cornelis will consult with CORE + Prosody investigators to help derive the parameter estimation algorithm for the integrated psychometric model for prosody, accuracy, and rate parameters.</p>
+<hr />
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src='images/sammit.JPG' style='border-radius: 50%; width: 90px'></td>
+<td style="text-align: left;"><strong>George Sammit, M.S.</strong><a href='mailto:gsammit@mail.smu.edu'> <i class='fa fa-envelope'></i></a><br>Machine Learning<br></td>
+<td style="text-align: left;"><img src='images/smu.png' style='border-radius: 0; width: 100px'></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>George is a D.Engr. student at Southern Methodist University studying Software Engineering in the Lyle School of Engineering. He holds a M.S. in Program &amp; Project Management and a B.S. in Computer Science, both from the University of Michigan. He has 25 years of professional software development experience, most of which was acquired at Southwest Airlines Co., and holds several professional certifications. His interests include software development processes (particularly agile methods), software engineering economics, and machine learning.</p>
 <hr />
 <div class="layout-chunk" data-layout="l-body">
 <table>
@@ -2482,7 +2558,7 @@ Prosody
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><img src='images/goal.png' style='border-radius: 50%; width: 90px'></td>
+<td style="text-align: left;"><img src='images/matsuda.jpg' style='border-radius: 50%; width: 100px'></td>
 <td style="text-align: left;"><a href="https://people.engr.ncsu.edu/nmatsud/"><strong>Noboru Matsuda, Ph.D.</strong></a><a href='mailto:noboru.matsuda@ncsu.edu'> <i class='fa fa-envelope'></i></a><br>Artificial Intelligence Consultant<br></td>
 <td style="text-align: left;"><img src='images/ncsu.png' style='border-radius: 0; width: 100px'></td>
 </tr>
@@ -2519,6 +2595,20 @@ Prosody
 </div>
 <p>Aaron has extensive experience in software engineering with a focus on full-stack web application development for the K-12 environment. Aaron has served as the technical coordinator and lead developer on many federal grants and state contracts. Aaron routinely communicates with diverse audiences of varying technical background and helps to achieve functional outcomes. He has made significant contributions to the easyCBM assessment system and several alternate/extended assessment systems used to meet statewide k-12 accountability requirements.</p>
 <p>For CORE + Prosody, Aaron is responsible for managing and developing the software for the Human-Rated Prosody study, ensuring the technical adequacy of data collection, and collaborating wih SMU on the tablet application development.</p>
+<hr />
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src='images/whitney.jpg' style='border-radius: 50%; width: 100px'></td>
+<td style="text-align: left;"><strong>Makayla Whitney</strong><a href='mailto:mwhitney@uoregon.edu'> <i class='fa fa-envelope'></i></a><br>Graduate Researcher<br></td>
+<td style="text-align: left;"><img src='images/UOSignature-BAR-3435.jpg' style='border-radius: 0; width: 100px'></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Makayla is a master’s student in the department of Educational Methodology, Policy, and Leadership at the University of Oregon. Her thesis is focused on creating a reading assessment for illiterate adults that includes aspects of comprehension. She received her a bachelor’s degree from Humboldt State University in Anthropology with focuses in Linguistics and Teaching English as a Second Language (ESL). Her background is in adult literacy, ESL studies, adult assessments, and reading materials.</p>
+<p>For CORE + Prosody, Makayla</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
