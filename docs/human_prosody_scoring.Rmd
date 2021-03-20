@@ -29,7 +29,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
-                      wwarning = FALSE,
+                      warning = FALSE,
                       message = FALSE)
 
 library(tidyverse)
@@ -76,11 +76,6 @@ data_ratings <- read_csv(here::here("nopublish", "data_ratings_final.csv")) %>%
          id_passage = parse_number(batch),
          grade_core = as.numeric(str_sub(id_passage, 1, 1)))
 
-student_audiofiles <- data_ratings %>%
-  filter(!is.na(rating)) %>% 
-  group_by(core_id) %>% 
-  count() 
-
 demos_easycbm <- read_csv(here::here("nopublish", "demos_easycbm.csv")) %>% 
   distinct(easycbm_id, .keep_all = TRUE)
 
@@ -88,12 +83,25 @@ dir_demos <-  read_csv(here::here("nopublish", "audiofile_directory_phase1_v4.cs
   left_join(demos_easycbm, by = "easycbm_id") %>% 
   select(-contains(".x"), -contains(".y"))
 
-rating_demos <- data_ratings %>% 
-  left_join(dir_demos, by = c("filename" = "file")) 
 
-student_demos <- rating_demos %>% 
-  distinct(core_id.x, .keep_all = TRUE) %>% 
-  select(grade_core, student_gender, student_ethnicity, student_race, easycbm_sped, easycbm_ell) %>% 
+# final ratings
+data_ratings_final <- data_ratings %>% 
+  filter(!is.na(rating)) %>% 
+  filter(str_detect(rating, "No audio", negate = TRUE)) %>% 
+  group_by(filename) %>% 
+  mutate(n = n()) %>% 
+  filter(n == 2) %>% 
+  select(-n) %>% 
+  ungroup()
+
+student_audiofiles <- data_ratings_final %>%
+  group_by(core_id) %>% 
+  count() %>% 
+  ungroup()
+
+rating_demos <- data_ratings_final %>% 
+  left_join(dir_demos, by = c("filename" = "file")) %>% 
+  select(core_id = core_id.x, filename, grade_core, student_gender, student_ethnicity, student_race, easycbm_sped, easycbm_ell) %>% 
   mutate(
     `Stratification Groups` = case_when(
       easycbm_ell == "y" & easycbm_sped == "y" ~ "EL & SWD",
@@ -112,28 +120,19 @@ student_demos <- rating_demos %>%
                          "y" = "Yes")
   )
 
-strat <- student_demos %>%
+student_demos <- rating_demos %>% 
+  distinct(core_id, .keep_all = TRUE)
+
+student_strat <- student_demos %>%
   tabyl(`Stratification Groups`) %>%
   as_tibble() %>%
   mutate(percent = round(percent*100, 0))
 
-# student_demos %>% 
-#   summarise(
-#     pct_fem = round(sum(student_gender == "F", na.rm = TRUE)/n()*100, 0),
-#     pct_male = round(sum(student_gender == "M", na.rm = TRUE)/n()*100, 0),
-#     miss_gend = round(sum(is.na(student_gender))/n()*100, 0),
-#     pct_latinx = round(sum(student_ethnicity == "Hispanic/Latino", na.rm = TRUE)/n()*100, 0),
-#   )
-
 ```
 
-Second, stratified random sampling was applied to select 200 audio recordings of each CORE passage, oversampling for English learners (ELs) and students with disabilities (SWDs), two student groups for which the ASR may be less accurate. Of the `r nrow(student_audiofiles)` students in the full sample, approximately `r pull(filter(strat, 'Stratification Groups' == "EL & SWD"), percent)`% were dually classified as EL and SWD, `r pull(filter(strat, 'Stratification Groups' == "EL only"), percent)`% were classified as EL only, `r pull(filter(strat, 'Stratification Groups' == "SWD only"), percent)`% were classified as SWD only, `r pull(filter(strat, 'Stratification Groups' == "Not EL or SWD"), percent)`% were classified as neither EL nor SWD. 
+Second, stratified random sampling was applied to select 200 audio recordings of each CORE passage, oversampling for English learners (ELs) and students with disabilities (SWDs), two student groups for which the ASR may be less accurate. The stratified random sampling plan led to the following quantities of sampled audio files: 5 students (2.5%) dually classified as EL and SWD, 65 students (32.5%) classified as EL only, 65 students (32.5%) classified as SWD only, and 65 students (32.5%) classified as neither EL nor SWD. A cascading logic was implemented, such that when fewer than 5 recordings included students dually classified as EL and SWD, the remainder of recordings was sampled from students classified as EL only. If there were insufficient audio recordings from EL only students, the remainder was sampled from students classified as SWD only. The remainder of audio recordings was sampled from students classified as neither EL nor SWD, of which there were ample recordings. 
 
-The stratified random sampling plan led to the following quantities of sampled audio files: 5 students (2.5%) dually classified as EL and SWD, 65 students (32.5%) classified as EL only, 65 students (32.5%) classified as SWD only, and 65 students (32.5%) classified as neither EL nor SWD. A cascading logic was implemented, such that when fewer than 5 recordings included students dually classified as EL and SWD, the remainder of recordings was sampled from students classified as EL only. If there were insufficient audio recordings from EL only students, the remainder was sampled from students classified as SWD only. The remainder of audio recordings was sampled from students classified as neither EL nor SWD, of which there were ample recordings. 
-
-The design of the project stipulated that each of the 200 audio files per CORE passage was to be rated for prosody by two different raters, for a total of 12,000 prosody ratings (10 passages * 3 grade levels * 200 recordings * 2 ratings = 12,000 total prosody ratings).
-
-The 6,000 audio files were grouped into 120 sets of 50 for distribution to human raters. The 200 audio files per CORE passage were split into four sets, such that each set of 50 contained audio files of students reading the same passage. This structure was used to allow raters to get familiar with a passage and thus provide more reliable ratings. The PI (J. F. T. Nese) manually distributed the sets as required, descending by grade and passage such that all four sets of the first Grade 4 passage were sent to the first eight raters (as each set was rated twice), and continuing through the last Grade 2 passage.
+The design of the project stipulated that each of the 200 audio files per CORE passage (10 passages * 3 grade levels * 200 recordings = 6,000 audio files) was to be rated for prosody by two different raters for a total of 12,000 prosody ratings (6,000 * 2 ratings = 12,000 total prosody ratings). The 6,000 audio files were grouped into 120 sets of 50 for distribution to human raters. The 200 audio files per CORE passage were split into four sets, such that each set of 50 contained audio files of students reading the same passage. This structure was used to allow raters to get familiar with a passage and thus provide more reliable ratings. The sets were manually distributed to raters required, descending by grade and passage such that all four sets of the first Grade 4 passage were sent to the first eight raters (as each set was rated twice), and continuing through the last Grade 2 passage.
 
 ```{r noaudio}
 noaudio1 <- data_ratings %>% 
@@ -149,27 +148,22 @@ Of the 6,000 selected audio files `r nrow(noaudio1)` (`r round(nrow(noaudio1)/60
 
 After the `r data_ratings %>% filter(str_detect(batch, "replacement1")) %>% distinct(filename) %>% nrow()` audio file replacements were scored, there remained five CORE passages that had less than 200 audio files with two different prosody ratings: three CORE passages had 199 audio files, and two had 197 audio files. For *n* (1 or 3) audio files that needed to be replaced for a CORE passage, *n* $\times$ 7 were sampled to account for potential audio recording with no available audio in the replacement set. These audio files were randomly sampled (without stratifying for ELs and SWDs) from those remaining for the respective CORE passages. 
 
+After all usable audio files were selected the full sample included `r format(distinct(data_ratings_final, filename) %>% nrow(), big.mark=",")` audio files each rated twice. Of these from `r format(length(unique(data_ratings_final$core_id)), big.mark=",")` students (`r format(sum(data_ratings_final$grade_core == 2), big.mark=",")` in Grade 2, `r format(sum(data_ratings_final$grade_core == 3), big.mark=",")` in Grade 3, `r format(sum(data_ratings_final$grade_core == 4), big.mark=",")` in Grade 4). The number of audio files per student in the final sample ranged from `r min(student_audiofiles$n)` to `r max(student_audiofiles$n)`.
+
 ```{r stratif}
 
 rating_strat <- rating_demos %>% 
-  mutate(
-    strat = case_when(
-      easycbm_ell == "y" & easycbm_sped == "y" ~ "EL & SWD",
-      easycbm_ell == "y" & easycbm_sped == "n" ~ "EL only",
-      easycbm_ell == "n" & easycbm_sped == "y" ~ "SWD only",
-      easycbm_ell == "n" & easycbm_sped == "n" ~ "Not EL or SWD",
-      TRUE ~ NA_character_)
-  ) %>% 
-  tabyl(strat) %>% 
+  tabyl(`Stratification Groups`) %>% 
   mutate(percent = round(percent*100, 0))
 
 
 ```
 
-After all selected and usable audio files were rated twice, the final sample included `r format(nrow(data_ratings), big.mark=",")` audio files from `r format(length(unique(data_ratings$core_id)), big.mark=",")` students (`r format(sum(data_ratings$grade_core == 2), big.mark=",")` in Grade 2, `r format(sum(data_ratings$grade_core == 3), big.mark=",")` in Grade 3, `r format(sum(data_ratings$grade_core == 4), big.mark=",")` in Grade 4). The number of audio files per student in the final sample ranged from `r min(student_audiofiles$n)` to `r max(student_audiofiles$n)`.
+The results of the stratification yielded a sample of `r format(distinct(data_ratings_final, filename) %>% nrow(), big.mark=",")` audio files that was `r rating_strat[rating_strat$'Stratification Groups' == "EL & SWD", "percent"]`% (*n* = `r rating_strat[rating_strat$'Stratification Groups' == "EL & SWD", "n"]`) EL and SWD, `r rating_strat[rating_strat$'Stratification Groups' == "EL only", "percent"]`% (*n* = `r rating_strat[rating_strat$'Stratification Groups' == "EL only", "n"]`) EL only, `r rating_strat[rating_strat$'Stratification Groups' == "SWD only", "percent"]`% (*n* = `r rating_strat[rating_strat$'Stratification Groups' == "SWD only", "n"]`) SWD only, and `r rating_strat[rating_strat$'Stratification Groups' == "Not EL or SWD", "percent"]`% (*n* = `r rating_strat[rating_strat$'Stratification Groups' == "Not EL or SWD", "n"]`) neither EL or SWD. 
 
 ```{r demos}
 student_demos_tbl <- student_demos %>%
+  select(-core_id, -filename) %>% 
   tbl_summary(
     label = list(
       grade_core ~ "Grade",
@@ -190,27 +184,9 @@ student_demos_tbl <- student_demos %>%
   #   table.font.size = "12px"
   # ) 
 
-rating_demos <- rating_demos %>% 
-  select(grade_core, student_gender, student_ethnicity, student_race, easycbm_sped, easycbm_ell) %>% 
-  mutate(
-    `Stratification Groups` = case_when(
-      easycbm_ell == "y" & easycbm_sped == "y" ~ "EL & SWD",
-      easycbm_ell == "y" & easycbm_sped == "n" ~ "EL only",
-      easycbm_ell == "n" & easycbm_sped == "y" ~ "SWD only",
-      easycbm_ell == "n" & easycbm_sped == "n" ~ "Not EL or SWD",
-      TRUE ~ NA_character_),
-    student_gender = recode(student_gender,
-                            "F" = "Female",
-                            "M" = "Male"),
-    easycbm_ell = recode(easycbm_ell,
-                         "n" = "No",
-                         "y" = "Yes"),
-    easycbm_sped = recode(easycbm_sped,
-                         "n" = "No",
-                         "y" = "Yes")
-  )
-
 audiofile_demos_tbl <- rating_demos %>%
+  distinct(filename, .keep_all = TRUE) %>% 
+  select(-core_id, -filename) %>% 
   tbl_summary(
     label = list(
       grade_core ~ "Grade",
@@ -219,7 +195,7 @@ audiofile_demos_tbl <- rating_demos %>%
       student_race ~ "Race",
       easycbm_sped ~ "Students with Disabilities (SWD)",
       easycbm_ell ~ "English Language Learners (EL)"),
-    missing_text = "(Missing)",
+    missing_text = "(Missing)"
   ) 
   # as_gt() %>%
   # gt::tab_header(
@@ -231,8 +207,6 @@ audiofile_demos_tbl <- rating_demos %>%
   #   table.font.size = "12px"
   # )
 ```
-
-The results of the stratification yielded a sample of `r format(nrow(data_ratings), big.mark=",")` audio files that was `r pull(filter(rating_strat, strat == "EL & SWD"), percent)`% (*n* = `r pull(filter(rating_strat, strat == "EL & SWD"), n)`) EL and SWD, `r pull(filter(rating_strat, strat == "EL only"), percent)`% (*n* = `r pull(filter(rating_strat, strat == "EL only"), n)`) EL only, `r pull(filter(rating_strat, strat == "SWD only"), percent)`% (*n* = `r pull(filter(rating_strat, strat == "SWD only"), n)`) SWD only, and `r pull(filter(rating_strat, strat == "Not EL or SWD"), percent)`% (*n* = `r pull(filter(rating_strat, strat == "Not EL or SWD"), n)`) neither EL or SWD. 
 
 ```{r demo_tbl}
 
@@ -255,7 +229,7 @@ tbl_merge(list(student_demos_tbl, audiofile_demos_tbl),
 
 # Research Team
 
-The [research team](link to section) comprised four faculty with expertise in the assessment of students’ reading fluency (specializations included: two doctorates in School Psychology, one doctorate in Educational Leadership with a specialization in Learning Assessment/Systems Performance, and one doctorate in Educational Psychology), and one graduate research assistant with experience in literacy. The research team met weekly from August through November 2020, to refine a prosody scoring rubric, score audio files to be used as training and demonstration exemplars, and develop two online sessions to train prosody raters. These sessions were delivered live as well as recorded for asynchronous delivery for raters who were unable to attend in person. 
+The [research team](https://jnese.github.io/coreprosody/research_team.html) comprised four faculty with expertise in the assessment of students’ reading fluency (specializations included: two doctorates in School Psychology, one doctorate in Educational Leadership with a specialization in Learning Assessment/Systems Performance, and one doctorate in Educational Psychology), and one graduate research assistant with experience in literacy. The research team met weekly from August through November 2020, to refine a prosody scoring rubric, score audio files to be used as training and demonstration exemplars, and develop two online sessions to train prosody raters. These sessions were delivered live as well as recorded for asynchronous delivery for raters who were unable to attend in person. 
 
 <a href="#top">(Back to Table of Contents)</a>
 
@@ -302,7 +276,7 @@ After finalizing the refined rubric, the research team came to unanimous agreeme
 
 In total, 81 passages were identified and scored by the research team as exemplars for trainings and demonstrations: 20 at Level 4, 23 at Level 3, 15 at Level 2, and 23 at Level 1. Of these, 24 were used for Training, 25 were used for Certification (both described below), and the remaining 32 were retained in case of future need.
 
-Human prosody raters were recruited and required to complete two [Training Sessions](link to section), and meet [Prosody Certification](link to section) criterion. 
+Human prosody raters were recruited and required to complete two [Training Sessions](https://jnese.github.io/coreprosody/human_prosody_scoring.html#training-development-implementation), and meet [Prosody Certification](https://jnese.github.io/coreprosody/human_prosody_scoring.html#prosody-certification) criterion. 
 
 <a href="#top">(Back to Table of Contents)</a>
 
@@ -328,11 +302,11 @@ Of the 300 respondents, 119 completed the Registration form, and `r nrow(data_tr
 
 # Prosody Certification
 
-Prior to starting work, each prosody rater was required to complete the Training and demonstrate scoring proficiency by obtaining 80% or higher agreement with the research team’s pre-determined rating on two different sets of five audio files. Raters had five opportunities to achieve at least 80% (4/5) on two of the prosody assessments. Raters unable to achieve two passing scores received payment for their participation in training ($45) but were not be eligible to continue their participation in this project.
+Prior to starting work, each prosody rater was required to complete the Training and demonstrate scoring proficiency by obtaining 80% or higher agreement with the research team’s pre-determined rating on two different sets of five audio files. Raters had five opportunities to achieve at least 80% (4/5) on two of the prosody assessments. Raters unable to achieve two passing scores received payment for their participation in training ($45) but were not  eligible to continue their participation in this project.
 
 All Prosody Certification Assessments were delivered with Google Forms’ Quiz feature. All participants took the first Prosody Certification after Training #1 and before Training #2. The remaining Prosody Certification assessments were taken at each participant’s pace. Once a participant met the prosody certification criteria by scoring at least 80% on two assessments, they began scoring audio files (and took no more assessments).
 
-Of the `r nrow(data_traincert)` people who completed the [Trainings](link to section), `r sum(data_traincert$passed == "pass")` (`r round((sum(data_traincert$passed == "pass")/nrow(data_traincert))*100, 0)`%) met prosody certification, `r sum(data_traincert$passed == "fail")` (`r round((sum(data_traincert$passed == "fail")/nrow(data_traincert))*100, 0)`%) failed to meet certification, and `r sum(data_traincert$passed == "incomplete")` (`r round((sum(data_traincert$passed == "incomplete")/nrow(data_traincert))*100, 0)`%) did not complete the certification process.
+Of the `r nrow(data_traincert)` people who completed the [Trainings](https://jnese.github.io/coreprosody/human_prosody_scoring.html#training-development-implementation), `r sum(data_traincert$passed == "pass")` (`r round((sum(data_traincert$passed == "pass")/nrow(data_traincert))*100, 0)`%) met prosody certification, `r sum(data_traincert$passed == "fail")` (`r round((sum(data_traincert$passed == "fail")/nrow(data_traincert))*100, 0)`%) failed to meet certification, and `r sum(data_traincert$passed == "incomplete")` (`r round((sum(data_traincert$passed == "incomplete")/nrow(data_traincert))*100, 0)`%) did not complete the certification process.
 
 ```{r traincert_tble}
 
@@ -474,7 +448,7 @@ knitr::include_graphics("images/task_7steps.png")
 
 After listening to example recordings to clarify the scale, participants were able to practice on their own. Recordings were played, and participants were asked to first think about how they would rate the recording without sharing their scores, and then they were prompted to type their prosody score for the recorded reading into the Zoom platform’s chat box feature. Participants’ reasoning for scores was discussed as a large group with research team members facilitating the discussion and using the rubric to emphasize points made. 
 
-After Training Session #1, participants were given the first Prosody Certification assessment, which consisted of five audio files to be scored individually, on their own time, before Training Session #2 . 
+After Training Session #1, participants were given the first Prosody Certification assessment, which consisted of five audio files to be scored individually, on their own time, before Training Session #2. 
 
 Of the `r nrow(data_traincert)` people who took the Prosody Certification Assessment #1, `r sum(data_traincert$cert1_score >= 4)` (`r round(sum(data_traincert$cert1_score >= 4)/nrow(data_traincert)*100, 0)`%) passed and `r sum(data_traincert$cert1_score < 4)` (`r round(sum(data_traincert$cert1_score < 4)/nrow(data_traincert)*100, 0)`%) did not. Note that Certification #1 was taken after Training Session #1, before the entire Training process was complete.
 
@@ -515,11 +489,19 @@ Participants were then given an [introduction](https://jnese.github.io/CORE-II_t
 
 # Prosody Rating Procedures 
 
-## Prososy Raters: Sample
+## Prosody Raters: Sample
 
 ```{r raters}
 
-data_raters <- read_csv(here::here("nopublish", "data_raterdatabase.csv"))
+data_raters <- read_csv(here::here("nopublish", "data_raterdatabase.csv")) %>% 
+  filter(first != "dottie") %>% 
+  select(-c(batches, files_scored))
+
+data_raters <- data_ratings_final %>% 
+  group_by(email) %>% 
+  summarize(batches = n_distinct(batch),
+            files_scored = n()) %>% 
+  left_join(data_raters, by = "email")
 
 states <- data_raters %>% 
   tabyl(state) %>% 
@@ -586,7 +568,6 @@ read_specialist <- data_raters %>%
   filter(role == "reading / literacy specialist" |
            str_detect(role_contentarea, "Reading"))
 
-
 ```
 
 #### Professional Roles
@@ -602,13 +583,13 @@ The professional roles of the raters were as follows:
 * `r sum(nrow(others))` (`r round(sum(nrow(others))/nrow(data_raters)*100, 0)`%) reported as "other" 
   + (i.e., dyslexia program specialist; literacy tutor/data analyst/testing coordinator; project consultant supporting literacy, behavior and MTSS; RTI coordinator/interventionist; RTI specialist; MTSS lead; EC compliance case manager; Master's student; and undergraduate student studying elementary education)
 
-* 3 (`r round(3/nrow(data_raters)*100, 0)`%) reported as "school psychologist | social worker | counselor | behavior specialist | etc."
+* `r nrow(filter(data_raters, role == "school psychologist | social worker | counselor | behavior specialist | etc."))` (`r round(nrow(filter(data_raters, role == "school psychologist | social worker | counselor | behavior specialist | etc."))/nrow(data_raters)*100, 0)`%) reported as "school psychologist | social worker | counselor | behavior specialist | etc."
 
-* 2 (`r round(2/nrow(data_raters)*100, 0)`%) reported as "administrator | principal | district support"
+* `r nrow(filter(data_raters, role == "administrator | principal | district support"))` (`r round(nrow(filter(data_raters, role == "administrator | principal | district support"))/nrow(data_raters)*100, 0)`%) reported as "administrator | principal | district support"
 
-* 2 (`r round(2/nrow(data_raters)*100, 0)`%) were retired, and reported their role as special educators before retirement
+* `r nrow(filter(data_raters, str_detect(role, "retired")))` (`r round(nrow(filter(data_raters, str_detect(role, "retired")))/nrow(data_raters)*100, 0)`%) were retired, and reported their role as special educators before retirement
 
-* 1 (`r round(11/57*100, 0)`%) an "other content area specialist" (i.e., ESOL)
+* `r nrow(filter(data_raters, str_detect(role_contentarea, "ESOL")))` (`r round(nrow(filter(data_raters, str_detect(role_contentarea, "ESOL")))/nrow(data_raters)*100, 0)`%) an "other content area specialist" (i.e., ESOL)
 
 #### Experience
 
@@ -784,7 +765,7 @@ The `r nrow(data_raters)`certified prosody raters created a profile on a project
 
 The prosody raters were instructed to first complete a Prosody Review containing four exemplar files, one at each prosody level (i.e, 1, 2, 3, 4), prior to rating their first set of audio files. The expectation was set in training that raters must complete a minimum of 50 audio files; there was no maximum. Upon completion of the first set of recordings, raters emailed PI Nese to receive another set of recordings to rate. 
 
-In this manner, all `r format(nrow(data_ratings), big.mark=",")` audio recordings were rated by two different prosody raters from November 28, 2020 through February 8, 2021.
+In this manner, all `r format(nrow(distinct(data_ratings_final, filename)), big.mark=",")` audio recordings were rated by two different prosody raters from November 28, 2020 through February 8, 2021, for a total of `r format(nrow(data_ratings_final), big.mark=",")` human prosody scores.
 
 The median number of audio files scored by prosody raters was `r round(median(data_raters$files_scored), 0)`, with a range from `r min(data_raters$files_scored)` to `r max(data_raters$files_scored)` (*Mean* = `r round(mean(data_raters$files_scored), 0)`, *SD* = `r round(sd(data_raters$files_scored), 0)`).
 
@@ -795,7 +776,7 @@ data_raters %>%
   summarize(Count = n()) %>% 
   ggplot(aes(as.factor(files_scored), Count)) + 
   geom_col(fill = "#0072B2") +
-  geom_text(aes(label = Count), vjust = -.5) +
+#  geom_text(aes(label = Count), vjust = -.5) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
   labs(
     x = "Audio Files Scored",

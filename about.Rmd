@@ -37,7 +37,7 @@ As PI of CORE + Prosody, Joe is responsible for all aspects of the CORE + Prosod
 
 ```{r aki, results="asis"}
 tibble(
-  image = "<img src='images/kamata.jpg' style='border-radius: 50%; width: 100px'>",
+  image = "<img src='images/kamata.jpg' style='border-radius: 50%; width: 90px'>",
   name = "[**Akihito Kamata, Ph.D.**]()<a href='mailto:akamata@smu.edu'> <i class='fa fa-envelope'></i></a><br>Co-Principal Investigator<br>",
   univ = "<img src='images/smu.png' style='border-radius: 0; width: 100px'>"
 ) %>% 
@@ -106,9 +106,9 @@ tibble(
 
 ```{r nelis, results="asis"}
 tibble(
-  image = "<img src='images/potgieter.jpg' style='border-radius: 50%; width: 90px'>",
+  image = "<img src='images/potgieter.jpg' style='border-radius: 50%; width: 100px'>",
   name = "[**Cornelis Potgieter, Ph.D.**](http://www.cjpotgieter.com/)<a href='mailto:c.potgieter@tcu.edu'> <i class='fa fa-envelope'></i></a><br>Statistics Consultant<br>",
-  univ = "<img src='images/tcu.svg' style='border-radius: 0; width: 100px'>"
+  univ = "<img src='images/tcu.svg' style='border-radius: 0; width: 80px'>"
 ) %>% 
   knitr::kable(col.names = NULL)
 ```
@@ -119,7 +119,7 @@ Cornelis will consult with CORE + Prosody investigators to help derive the param
 
 ----
 
-```{r xinyi, results="asis"}
+```{r george, results="asis"}
 tibble(
   image = "<img src='images/sammit.jpg' style='border-radius: 50%; width: 90px'>",
   name = "**George Sammit, M.S.**<a href='mailto:gsammit@mail.smu.edu'> <i class='fa fa-envelope'></i></a><br>Machine Learning<br>",
@@ -147,7 +147,7 @@ Xinyi is an Assistant Professor in the Department of Computer Science and Techno
 
 ```{r noboru, results="asis"}
 tibble(
-  image = "<img src='images/matsuda.jpg' style='border-radius: 50%; width: 90px'>",
+  image = "<img src='images/matsuda.jpg' style='border-radius: 50%; width: 100px'>",
   name = "[**Noboru Matsuda, Ph.D.**](https://people.engr.ncsu.edu/nmatsud/)<a href='mailto:noboru.matsuda@ncsu.edu'> <i class='fa fa-envelope'></i></a><br>Artificial Intelligence Consultant<br>",
   univ = "<img src='images/ncsu.png' style='border-radius: 0; width: 100px'>"
 ) %>% 

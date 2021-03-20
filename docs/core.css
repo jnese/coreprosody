@@ -22,7 +22,7 @@ html {
   --aside-size:      12px;
   --fig-cap-size:    13px;
   /*-- Main font colors --*/
-  --title-color:     #4f5157;/* edited from #000000; */
+  --title-color:     #FFFFFF;/* edited from #000000; */
   --header-color:    #2b323f;/* edited from rgba(0, 0, 0, 0.8); */
   --body-color:      rgba(0, 0, 0, 0.8);
   --aside-color:     rgba(0, 0, 0, 0.6);
@@ -63,15 +63,15 @@ d-appendix {
   --title-size:       24px;
   --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        15px;
-  --hover-color:      #f5c04a; /* edited from white; */
-  --bkgd-color:       #c03728; /* edited from #0F2E3D */
+  --hover-color:      #C69932; /*#f5c04a; /* edited from white; */
+  --bkgd-color:       #A5352A; /* #c03728; /* edited from #0F2E3D */
 }
 
 .distill-site-footer {
   --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        15px;
-  --hover-color:      #f5c04a; /* edited from white; */
-  --bkgd-color:       #c03728; /* edited from #0F2E3D*/
+  --hover-color:      #6699AC; /*#f5c04a; /* edited from white; */
+  --bkgd-color:       #A5352A; /*#c03728; /* edited from #0F2E3D*/
 }
 
 /*-- Additional custom styles --*/
@@ -86,8 +86,14 @@ body
   background-color: #3486b8;
 }
 
+.container-fluid {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 d-title {
-  background-image: url("images/headerfoo2.png");
+  background-image: url("images/header_1349213000.jpg");
 /*    background-position: 100% 100%; */
 	  background-repeat: no-repeat;
 	  background-size: cover;
