@@ -44,6 +44,9 @@ tibble(
   knitr::kable(col.names = NULL)
 ```
 
+Aki is a Professor in the Department of Education Policy & Leadership and the Department of Psyschology at Southern Methodist University. His primary research interest is psychometrics and educational and psychological measurement, focusing on development and implementation of item-level test data analysis methodology through various modeling framework, including item response theory, multilevel modeling, and structural equation modeling. Aki is also the Principal Investigator of a project to [Develop Computational Tools for Model-Based Oral Reading Fluency Assessments](https://ies.ed.gov/funding/grantsearch/details.asp?ID=3410).
+
+As Co-PI of CORE + Prosody, Aki shares responsibility for all aspects of the project, and leads all psychometric modeling, including the study to measure and score prosody, and the calibration, equating, linking study.
 
 ----
 
@@ -101,6 +104,9 @@ tibble(
   knitr::kable(col.names = NULL)
 ```
 
+Eric is an Associate Professor in Computer Science in the Bobby B. Lyle School of Engineering, Southern Methodist University. He is a fellow of the Hunt Institute for Engineering Humanity, a member of the Darwin Deason Institute for Cyber-security, and a member of the ATT center for virtualization. His research explores the interdisciplinary relationship of machine learning and signal/image processing with the fields of security, mobile health, education, psycho-visual psychology, human-computer interaction, and ubiquitous computing. 
+
+As the Computer Engineer for CORE + Prosody, Dr. Larson is responsible for developing the project's prosody algorithm, ASR engine, and tablet application.
 
 ----
 
@@ -120,15 +126,15 @@ Cornelis will consult with CORE + Prosody investigators to help derive the param
 ----
 
 ```{r george, results="asis"}
-tibble(
-  image = "<img src='images/sammit.jpg' style='border-radius: 50%; width: 90px'>",
-  name = "**George Sammit, M.S.**<a href='mailto:gsammit@mail.smu.edu'> <i class='fa fa-envelope'></i></a><br>Machine Learning<br>",
-  univ = "<img src='images/smu.png' style='border-radius: 0; width: 100px'>"
-) %>% 
-  knitr::kable(col.names = NULL)
+# tibble(
+#   image = "<img src='images/sammit.jpg' style='border-radius: 50%; width: 90px'>",
+#   name = "**George Sammit, M.S.**<a href='mailto:gsammit@mail.smu.edu'> <i class='fa fa-envelope'></i></a><br>Machine Learning<br>",
+#   univ = "<img src='images/smu.png' style='border-radius: 0; width: 100px'>"
+# ) %>% 
+#   knitr::kable(col.names = NULL)
 ```
 
-George is a D.Engr. student at Southern Methodist University studying Software Engineering in the Lyle School of Engineering.  He holds a M.S. in Program & Project Management and a B.S. in Computer Science, both from the University of Michigan. He has 25 years of professional software development experience, most of which was acquired at Southwest Airlines Co., and holds several professional certifications. His interests include software development processes (particularly agile methods),  software engineering economics, and machine learning.
+<!-- George is a D.Engr. student at Southern Methodist University studying Software Engineering in the Lyle School of Engineering.  He holds a M.S. in Program & Project Management and a B.S. in Computer Science, both from the University of Michigan. He has 25 years of professional software development experience, most of which was acquired at Southwest Airlines Co., and holds several professional certifications. His interests include software development processes (particularly agile methods),  software engineering economics, and machine learning. -->
 
 ----
 
@@ -201,4 +207,4 @@ tibble(
 
 Makayla is a master's student in the department of Educational Methodology, Policy, and Leadership at the University of Oregon. Her thesis is focused on creating a reading assessment for illiterate adults that includes aspects of comprehension. She received her a bachelor's degree from Humboldt State University in Anthropology with focuses in Linguistics and Teaching English as a Second Language (ESL). Her background is in adult literacy, ESL studies, adult assessments, and reading materials.
 
-For CORE + Prosody, Makayla
+For CORE + Prosody, Makayla assisted with the development of the prosody rubric and worked as a prosody rater in the [Human Rated Prosody Study](https://jnese.github.io/coreprosody/human_prosody_scoring.html#prosody-rating-procedures). 
