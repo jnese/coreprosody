@@ -13,6 +13,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather');
 @import url('https://fonts.googleapis.com/css2?family=Lato');
 @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css2?family=Give+You+Glory');
 
 html {
   /*-- Main font sizes --*/
@@ -63,7 +65,7 @@ d-appendix {
   --title-size:       24px;
   --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        15px;
-  --hover-color:      #C69932; /*#f5c04a; /* edited from white; */
+  --hover-color:      #6699AC; /*#f5c04a; /* edited from white; */
   --bkgd-color:       #A5352A; /* #c03728; /* edited from #0F2E3D */
 }
 

@@ -1,7 +1,7 @@
 ---
 title: "CORE + Prosody"
-description: |
-  A Comprehensive Measure of Reading Fluency: <br>Uniting and Scaling Accuracy, Rate, and Prosody
+#description: |
+#  A Comprehensive Measure of Reading Fluency: <br>Uniting and Scaling Accuracy, Rate, and Prosody
 site: distill::distill_website
 ---
 
@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-CORE + Prosody is a comprehensive measure of reading fluency that unites accuracy, rate, and prosody of student oral reading. 
+### CORE + Prosody is a comprehensive measure of reading fluency that unites accuracy, rate, and prosody of students' oral reading. 
 
 Oral reading fluency is an essential part of reading proficiency^[[National Reading Panel](https://www.nichd.nih.gov/sites/default/files/publications/pubs/nrp/Documents/report.pdf)], and is perhaps the most prevalent reading assessment used in classrooms across the U.S.; however, these traditional assessments measure only accuracy and rate, and entirely neglect prosody. Prosody is reading with appropriate expression and phrasing, is one way to demonstrate that a reader understands the meaning of the text. Research has shown prosody to be an important indicator of comprehension, beyond accuracy and rate alone, particularly among developing readers.
 
