@@ -107,8 +107,8 @@ This project will produce a Shiny app for rendering user-friendly R code needed 
 
 :::::
 
-## Acknowledgments {.appendix}
+<!-- ## Acknowledgments {.appendix} -->
 
-Apple illustration by Amanda Almira Newton (1912). Variety: Goal. Geographic origin: Albany, Linn County, Oregon, United States. U.S. Department of Agriculture Pomological Watercolor Collection. Rare and Special Collections, National Agricultural Library, Beltsville, MD 20705. 
+<!-- Apple illustration by Amanda Almira Newton (1912). Variety: Goal. Geographic origin: Albany, Linn County, Oregon, United States. U.S. Department of Agriculture Pomological Watercolor Collection. Rare and Special Collections, National Agricultural Library, Beltsville, MD 20705.  -->
 
-Website colors from [Garrick Aden-Buie](https://www.garrickadenbuie.com/)'s [ggpomological](https://github.com/gadenbuie/ggpomological). package.
+<!-- Website colors from [Garrick Aden-Buie](https://www.garrickadenbuie.com/)'s [ggpomological](https://github.com/gadenbuie/ggpomological). package. -->

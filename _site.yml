@@ -6,7 +6,8 @@ description: |
 output_dir: "docs"
 navbar:
   logo:
-    image: images/goal.png
+#    - icon: fa-apple-alt
+#    image: images/goal.png
   right:
     - text: "Prosody"
       menu:

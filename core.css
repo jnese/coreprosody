@@ -114,5 +114,14 @@ from: https://generatepress.com/forums/topic/background-image-on-only-one-page/
 
 */
 
+.nav-dropdown-content {
+  background-color: #AE493F;
+}
 
+.nav-dropdown-content a:hover {
+  background-color: #B75D54;
+}
 
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: rgba(255, 255, 255, 0.8);
+}
