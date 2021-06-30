@@ -105,7 +105,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["Research Team"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Research Team"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["theme"]}},"value":[{"type":"character","attributes":{},"value":["theme.css"]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2125,6 +2125,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   @import url('https://fonts.googleapis.com/css2?family=Poiret+One');
   @import url('https://fonts.googleapis.com/css2?family=Give+You+Glory');
 
+
   html {
     /*-- Main font sizes --*/
     --title-size:      50px;
@@ -2204,24 +2205,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   d-title {
-    background-image: url("images/header_1349213000.jpg");
-  /*    background-position: 100% 100%; */
-  	  background-repeat: no-repeat;
-  	  background-size: cover;
-  	  width: 100%;
-  	  height: 175px;
-  /*	  background-attachment: fixed; */
-  /*background-color: #e68c7c; */
+    background-color: #A5352A; 
   }
-
-  /*
-  from: https://generatepress.com/forums/topic/background-image-on-only-one-page/
-  .page-id-35 {
-        background-image: url('URL TO THE IMAGE');
-  }
-
-
-  */
 
   .nav-dropdown-content {
     background-color: #AE493F;
@@ -2417,9 +2402,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a class="logo">
-<img alt="Logo"/>
-</a>
 <a href="index.html" class="title">CORE + Prosody</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
