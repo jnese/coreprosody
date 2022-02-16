@@ -16,13 +16,15 @@ author:
   - name: Rhonda N. T. Nese 
     affiliation: University of Oregon
 date: "January 2020"
-#citation_url: 
+citation_url: https://jnese.github.io/coreprosody/human_prosody_scoring.html
 slug: nese2020humanprosody
 output:
   distill::distill_article:
     toc: true
     toc_depth: 4
     theme: theme.css
+bibliography: references-humanps.bib
+csl: apa-6th-edition.csl
 ---
 
 <h2 id="top" /h2>
@@ -235,7 +237,7 @@ The [research team](https://jnese.github.io/coreprosody/research_team.html) comp
 
 # Prosody Rubric Development
 
-The research team began with the prosody scoring rubric developed by the National Assessment of Educational Progress (NAEP; ^[[Daane  et al., 2005](https://nces.ed.gov/nationsreportcard/pdf/studies/2006469.pdf)]), a four-point scale (below) that focuses on phrasing, adherence to the author’s syntax, and expressiveness to assess prosody at Grade 4.  
+The research team began with the prosody scoring rubric developed by the National Assessment of Educational Progress (NAEP; @NAEP2002), a four-point scale (below) that focuses on phrasing, adherence to the author’s syntax, and expressiveness to assess prosody at Grade 4.  
 
 ```{r fig.cap="From [Daane, Campbell, Grigg, Goodman, & Oranje (2005)](https://nces.ed.gov/nationsreportcard/pdf/studies/2006469.pdf)", out.extra="class=external"}
 knitr::include_graphics("images/naep_rubric.png")
@@ -243,7 +245,7 @@ knitr::include_graphics("images/naep_rubric.png")
 
 Although NAEP only applied the scoring rubric to Grade 4, our research team made the decision to use the rubric across Grades 2 through 4, independent of grade and based on the absolute prosody criteria specified for each of the four prosody levels.
 
-To help draw clear differences between the four prosody levels across grades, parts of the Multi-Dimensional Fluency Scoring Guide (MFSG; ^[[Rasinski  et al., 2009](https://www.tandfonline.com/doi/pdf/10.1080/19388070802468715)]) were incorporated into the original NAEP rubric. 
+To help draw clear differences between the four prosody levels across grades, parts of the Multi-Dimensional Fluency Scoring Guide (MFSG; @rasinski2009) were incorporated into the original NAEP rubric. 
 
 ```{r fig.cap="From [Rasinski, Rikli, & Johnston (2009)](https://www.tandfonline.com/doi/pdf/10.1080/19388070802468715)", out.extra="class=external"}
 #fig.width=6, fig.height=1.5
@@ -793,13 +795,12 @@ data_raters %>%
 
 ## Acknowledgments {.appendix}
 
-This is a place to recognize people and institutions. It may also be a good place
-to acknowledge and cite software that makes your work possible.
+The research reported here was supported by the Institute of Education Sciences, U.S. Department of Education, through Grant [R305A200018](https://ies.ed.gov/funding/grantsearch/details.asp?ID=3427) to University of Oregon. The opinions expressed are those of the authors and do not represent views of the Institute or the U.S. Department of Education.
 
-## Author Contributions {.appendix}
+<!-- ## Author Contributions {.appendix} -->
 
-We strongly encourage you to include an author contributions statement briefly 
-describing what each author did.
+<!-- We strongly encourage you to include an author contributions statement briefly  -->
+<!-- describing what each author did. -->
 
 <!-- ## Appendix A {.appendix} -->
 
