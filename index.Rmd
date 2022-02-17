@@ -16,13 +16,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-### CORE + Prosody is a comprehensive measure of reading fluency that unites accuracy, rate, and prosody of students' oral reading. 
+### **CORE + Prosody** is a comprehensive measure of reading fluency that unites accuracy, rate, and prosody of students' oral reading. 
 
-Oral reading fluency is an essential part of reading proficiency^[[National Reading Panel](https://www.nichd.nih.gov/sites/default/files/publications/pubs/nrp/Documents/report.pdf)], and is perhaps the most prevalent reading assessment used in classrooms across the U.S.; however, these traditional assessments measure only accuracy and rate, and entirely neglect prosody. Prosody is reading with appropriate expression and phrasing, is one way to demonstrate that a reader understands the meaning of the text. Research has shown prosody to be an important indicator of comprehension, beyond accuracy and rate alone, particularly among developing readers.
+Oral reading fluency is an essential part of reading proficiency^[[National Reading Panel](https://www.nichd.nih.gov/sites/default/files/publications/pubs/nrp/Documents/report.pdf)], and is perhaps the most prevalent reading assessment used in classrooms across the U.S.; however, these traditional assessments measure only accuracy and rate, and entirely neglect prosody. Prosody is reading with appropriate expression and phrasing, and is one way a reader demonstrates they understand the meaning of the text. Research has shown prosody to be an important indicator of comprehension, beyond accuracy and rate alone, particularly among developing readers^[[Benjamin & Schwanenflugel (2010)](https://ila.onlinelibrary.wiley.com/doi/abs/10.1598/RRQ.45.4.2); [Miller & Schwanenflugel (2006)](https://psycnet.apa.org/record/2006-21055-013); [Valencia et al., (2010)](https://ila.onlinelibrary.wiley.com/doi/abs/10.1598/RRQ.45.3.1); [Benjamin et al., (2013)](https://ila.onlinelibrary.wiley.com/doi/full/10.1002/rrq.43)].
 
-The purpose of CORE + Prosody is to develop and validate an automated scoring system to measure, unite, and scale the accuracy, rate, and prosody in oral reading fluency to be used as a screening and progress monitoring measure for students in Grades 2 through 4. 
+The purpose of **CORE + Prosody** is to develop and validate an automated scoring system to measure, unite, and scale the accuracy, rate, and prosody in oral reading fluency to be used as a screening and progress monitoring measure for students in Grades 2 through 4. 
 
-CORE + Prosody is a four-year project funded by the Institute of Education Sciences ([IES](https://ies.ed.gov/)), the statistics, research, and evaluation arm of the U.S. Department of Education.
+**CORE + Prosody** is a four-year project funded by the Institute of Education Sciences ([IES](https://ies.ed.gov/)), the statistics, research, and evaluation arm of the U.S. Department of Education.
 
 
 ```{r panelset, layout="l-body-outset", echo=FALSE}

@@ -13,8 +13,8 @@ navbar:
       menu:
         - text: "Human Prosody Scoring"
           href: human_prosody_scoring.html
-        # - text: "Machine Prosody Scoring"
-        #   href: machine_prosody_scoring.html
+        - text: "Machine Prosody Scoring"
+          href: machine_prosody_scoring.html
     - text: "Research Team"
       href: research_team.html
   search: true
