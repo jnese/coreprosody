@@ -1,0 +1,119 @@
+---
+title: "Dissemination"
+# description: |
+#   A new article created using the Distill format.
+# author:
+#   - name: Nora Jones 
+#     url: https://example.com/norajones
+#     affiliation: Spacely Sprockets
+#     affiliation_url: https://example.com/spacelysprokets
+# date: "`r Sys.Date()`"
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    theme: theme.css
+bibliography: references-machineps.bib
+csl: apa-6th-edition.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+#<div style="text-indent: -36px; padding-left: 36px;">
+```
+
+
+
+# Conferences
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+George Sammit, Zhongjie Wu, Yihao Wang, Zhongdi Wu, Akihito Kamata, Joe Nese, and Eric C. Larson (2022). [*Automated Prosody Classification for Oral Reading Fluency with Quadratic Kappa Loss and Attentive X-vectors.*](https://s2.smu.edu/~eclarson/pubs/2022_Prosody.pdf ) International Conference on Acoustics, Speech, and Signal Processing (ICASSP 2022), Singapore.
+</p> 
+
+> Automated prosody classification in the context of oral reading fluency is a critical area for the objective evaluation of students’ reading proficiency. In this work, we present the largest ataset to date in this domain. It includes spoken phrases from over 1,300 students assessed by multiple trained raters. Moreover, we investigate the usage of X-Vectors and two variations thereof that incorporate weighted attention in classifying prosody correctness. We also evaluate the usage of quadratic weighted kappa loss to better accommodate the inter-rater differences in the dataset. Results indicate improved performance over baseline convolutional and current state-of-the-art models, with prosodic correctness accuracy of 86.4%.
+
+----
+
+# Related Works
+
+## CORE 
+[Measuring Oral Reading Fluency: Computerized Oral Reading Evaluation (CORE)](https://ies.ed.gov/funding/grantsearch/details.asp?ID=1492)
+
+### Journal Articles
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T. (2022). [Comparing the growth and predictive performance of a traditional oral reading fluency measure with an experimental novel measure.](https://journals.sagepub.com/doi/pdf/10.1177/23328584211071112) *AERA Open, 8*, 1-19.</p>
+
+>Curriculum-based measurement of oral reading fluency (CBM-R) is used as an indicator of reading proficiency, and to measure at risk students’ response to reading interventions to help ensure effective instruction. The purpose of this study was to compare model-based words read correctly per minute (WCPM) scores (computerized oral reading evaluation [CORE]) with Traditional CBM-R WCPM scores to determine which provides more reliable growth estimates and demonstrates better predictive performance of reading comprehension and state reading test scores. Results indicated that in general, CORE had better (a) within-growth properties (smaller SDs of slope estimates and higher reliability), and (b) predictive performance (lower root mean square error, and higher $R^2$, sensitivity, specificity, and area under the curve values). These results suggest increased measurement precision for the model-based CORE scores compared with Traditional CBM-R, providing preliminary evidence that CORE can be used for consequential assessment.
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T., & Kamata, A. (2021). `r xfun::embed_file(path = here::here("nopublish", "doi_10137spq0000415.pdf"), text = "Evidence for automated scoring and shorter passages of CBM-R in early elementary school.")` *School Psychology, 36*, 47-59.</p>
+
+> Curriculum-based measurement of oral reading fluency (CBM-R) is widely used across the United States as a strong indicator of comprehension and overall reading achievement, but has several limitations including errors in administration and large standard errors of measurement. The purpose of this study is to compare scoring methods and passage lengths of CBM-R in an effort to evaluate potential improvements upon traditional CBM-R limitations. For a sample of 902 students in Grades 2 through 4, who collectively read 13,766 passages, we used mixed-effect models to estimate differences in CBM-R scores and examine the effects of (a) scoring method (comparing a human scoring criterion vs. traditional human or automatic speech recognition [ASR] scoring), and (b) passage length (25, 50, or 85 words, and traditional CBM-R length). We also examined differences in word score (correct/incorrect) agreement rates between human-to-human scoring and human-to-ASR scoring. Our results indicated that ASR can be applied in schools to score CBM-R, and that scores for shorter passages are comparable to traditional passages.
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T., & Kamata, A. (2021). `r xfun::embed_file(path = here::here("nopublish", "doi_1011771534508420937801.pdf"), text = "Addressing the large standard error of traditional CBM-R: Estimating the conditional standard error of a model-based estimate of CBM-R.")` *Assessment for Effective Intervention, 47*, 53-58.</p>
+
+> Curriculum-based measurement of oral reading fluency (CBM-R) is widely used across the country as a quick measure of reading proficiency that also serves as a good predictor of comprehension and overall reading achievement, but it has several practical and technical inadequacies, including a large standard error of measurement (SEM). Reducing the SEM of CBM-R scores has positive implications for educators using these measures to screen or monitor student growth. The purpose of this study was to compare the SEM of traditional CBM-R words correct per minute (WCPM) fluency scores and the conditional SEM (CSEM) of model-based WCPM estimates, particularly for students with or at risk of poor reading outcomes. We found (a) the average CSEM for the model-based WCPM estimates was substantially smaller than the reported SEMs of traditional CBM-R systems, especially for scores at/below the 25th percentile, and (b) a large proportion (84%) of sample scores, and an even larger proportion of scores at/below the 25th percentile (about 99%) had a smaller CSEM than the reported SEMs of traditional CBM-R systems.
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Kara, Y., Kamata, A., Potgieter, C., & Nese, J. F. (2020). `r xfun::embed_file(path = here::here("nopublish", "doi_1011770013164419900208.pdf"), text = "Estimating model-based oral reading fluency: A Bayesian approach.")` *Educational and Psychological Measurement, 80*, 847-869.</p>
+
+> Oral reading fluency (ORF), used by teachers and school districts across the country to screen and progress monitor at-risk readers, has been documented as a good indicator of reading comprehension and overall reading competence. In traditional ORF administration, students are given one minute to read a grade-level passage, after which the assessor calculates the words correct per minute (WCPM) fluency score by subtracting the number of incorrectly read words from the total number of words read aloud. As part of a larger effort to develop an improved ORF assessment system, this study expands on and demonstrates the performance of a new model-based estimate of WCPM based on a recently developed latent-variable psychometric model of speed and accuracy for ORF data. The proposed method was applied to a data set collected from 58 fourth-grade students who read four passages (a total of 260 words). The proposed model-based WCPM scores were also evaluated through a simulation study with respect to sample size and number of passages read.
+
+
+### Conferences
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Kamata, A., Kara, Y., Potgieter, C. J., & Nese, J. F. T. (2020, March). *Equating oral reading fluency scores: A model-based approach.* Paper accepted for presentation at the 8th annual Texas Universities Educational Statistics and Psychometrics Meeting, College Station, TX.</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T., Anderson, D., & Kamata, A. (2020, April). *Preliminary consequential validity evidence for a computerized oral reading fluency assessment.* Paper accepted for presentation at the annual meeting of the American Educational Research Association (AERA), San Francisco, CA. (Conference Canceled)</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Kamata, A., Kara, Y., Potgieter, C. J., & Nese, J. F. T. (2020, April). *Equating oral reading fluency scores: A model-based approach.* Paper accepted for presentation at the annual meeting of National Council on Measurement in Education, San Francisco, CA. (Conference Canceled)</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T. & Kamata, A. (2020, February). *Reducing the standard error of measurement (SEM) of oral reading fluency (ORF).* Poster accepted for presentation at the annual meeting of the Pacific Coast Research Conference (PCRC), Coronado, CA. (Conference Canceled)</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T. & Kamata, A. (2020, February). *Accuracy of speech recognition in oral reading fluency for diverse student groups.* Poster presented at the annual meeting of the Council for Exceptional Children (CEC), Portland, OR.</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T., Kamata, A., & Kahn, J. (2017, April). *Predictors of low agreement between automated speech recognition and human scores.* Poster presented at the annual meeting of the National Council on Measurement in Education (NCME), San Antonio, TX.</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T., Alonzo, J., Biancarosa, G., Kamata, A., & Kahn, J. (2017, February). *Text messages: Examining different estimates of text complexity.* Poster presented at the Annual Meeting of the Pacific Coast Research Conference (PCRC), Coronado, CA.</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T., Alonzo, J., & Kamata, A. (2016, April). *Comparing passage lengths and human vs. speech recognition scoring or oral reading fluency.* Paper presented at the annual meeting of the American Educational Research Association (AERA), Washington, DC.</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Nese, J. F. T., Kamata, A., & Alonzo, J. (2015, July). Exploring the evidence of speech recognition and shorter passage length in Computerized Oral Reading Fluency (CORE). In K. Cummings (Chair), *Assessment fidelity in reading research: Effects of examiner, reading passage, and scoring methods.* Symposium conducted at the Society for the Scientific Study of Reading (SSSR), Hawaii.</p>
+
+----
+
+## [Developing Computational Tools for Model-Based Oral Reading Fluency Assessments](https://ies.ed.gov/funding/grantsearch/details.asp?ID=3410)
+
+### Conferences
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Kamata, A., & Nese, J. F. T. (2022, April). Introduction to model-based approach to oral reading fluency assessment. In A. Kamata’s (Chair) *Model-based Approach to Oral Reading Fluency Assessment.* National Council on Measurement in Education (NCME), San Diego, CA.</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Potgieter, C., Kara, Y., & Kamata, A. (2022, April). Estimating passage parameters by the model-based approach to ORF assessment. In A. Kamata’s (Chair) *Model-based Approach to Oral Reading Fluency Assessment.* National Council on Measurement in Education (NCME), San Diego, CA.</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Potgieter, C., Kamata, A., Kara, Y., Somsong, S., & Wang, K. P. (2022, April). Estimating fluency scores by the model-based approach to orf assessment. In A. Kamata’s (Chair) *Model-based Approach to Oral Reading Fluency Assessment.* National Council on Measurement in Education (NCME), San Diego, CA.</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Somsong, S., Wang, K. P., Le, N., & Kara, Y. (2022, April). Evaluation of various estimators for model-based fluency scores. In A. Kamata’s (Chair) *Model-based Approach to Oral Reading Fluency Assessment.* National Council on Measurement in Education (NCME), San Diego, CA.</p>
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+Kara, Y., Nese, J. F. T., & Kamata, A. (2022, April). Practical implications of the model-based approach to orf assessment. In A. Kamata’s (Chair) *Model-based Approach to Oral Reading Fluency Assessment.* National Council on Measurement in Education (NCME), San Diego, CA.</p>
+
+
+
+
+
