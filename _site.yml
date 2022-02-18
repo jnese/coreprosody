@@ -17,5 +17,7 @@ navbar:
           href: machine_prosody_scoring.html
     - text: "Research Team"
       href: research_team.html
+    - text: "Dissemination"
+      href: dissemination.html
   search: true
 output: distill::distill_article
