@@ -65,7 +65,7 @@ A number of works have investigated prosody correctness classification in this d
 
 4.	We conduct an ablation study to investigate the overall importance of each processing procedure.
 
-Our work not only builds upon the aforementioned works, but also differs in several respects. First, our goal is solely to assess prosody according to a [novel 4-scale rubric](https://jnese.github.io/coreprosody/human_prosody_scoring.html#the-core-prosody-rubric) using conventional neural networks. Similar to many of these studies, our automated assessment is compared against expert judgement; however, we incorporate the disagreement of those judges into our model. Our sample size is considerably larger than previous studies both in terms of recordings and participants. While previous studies have informed our feature selection, we concentrate on both functional and prosodic low-level descriptors (LLDs) in the audio signal. 
+Our work not only builds upon the aforementioned works, but also differs in several respects. First, our goal is solely to assess prosody according to a [novel 4-point rubric](https://jnese.github.io/coreprosody/human_prosody_scoring.html#the-core-prosody-rubric) using conventional neural networks. Similar to many of these studies, our automated assessment is compared against expert judgement; however, we incorporate the disagreement of those judges into our model. Our sample size is considerably larger than previous studies both in terms of recordings and participants. While previous studies have informed our feature selection, we concentrate on both functional and prosodic low-level descriptors (LLDs) in the audio signal. 
 
 # Dataset
 
@@ -88,6 +88,7 @@ Augmentation was applied randomly over a range of the adjustments taking care no
 From these samples, we used two kinds of features for model training. (1) Functional, summary data of the entire recording, were extracted with the 2016 Computational Paralinguistics Challenge - **CompArE** - [@weninger2013; @schuller2014]. And (2) low-level descriptors (LLDs), individual features taken every 100th of a second, were extracted using both the Extended Geneva Minimalistic Acoustic Parameter Set - **eGeMAPS** [@eyben2015] - and the CompArE. A model without augmented functional data is used during the first part of training process to give a clear overview of augmented effect. Of all LLDs available, training is first done with sub-section data and then combined into the full result. We obtain three sub-sections together that made up full LLDs data. Based on our literature review, we believe the following to be the most relevant to prosody classification.
 
 **1.	Functional(CompArE)**
+
 * Quartile
 * Inter-quartile range
 * Percentile
@@ -98,6 +99,7 @@ From these samples, we used two kinds of features for model training. (1) Functi
 * Coefficient
 
 **2. eGeMaps**
+
 * Frequency-related (voicing-related) time series features
   + Logarithmic F0 on a semitone frequency scale, starting at 27.5 Hz (semitone 0) 
   + Centre frequency and bandwidth of first, second, third formant 
@@ -111,6 +113,7 @@ From these samples, we used two kinds of features for model training. (1) Functi
   + Ratio of energy of the first F0 harmonic (H1) to the energy of the second F0 harmonic (H2) and the highest harmonic in the third formant range (A3)
 
 **3. CompArE**
+
 * Energy-related time series features, as they tend to be prosodic in nature (each of these features can be processed with a classical measure or via a convolutional filter)
   + Sum of auditory spectrum (loudness)
   + Sum of RASTA-style filtered auditory spectrum
@@ -136,7 +139,7 @@ Note that, for CompArE, we also have the delta (defined as $LDD⁄\Delta LDD$) o
 * Mean/SD of rising/falling slopes
 * Linear regression slope, offset, quadratic error
 
-# Modelng
+# Modeling
 
 We use the previously described pre-processed dataset as training data for modeling. To analyze each model, the result must be compared to human scoring results through a loss function. Most works use the Categorical Cross Entropy (CCE) as a loss function, which is a classic loss function for many classification tasks. However, due to the nature of prosody scoring, classes have a quantitative relation between each other that CCE cannot represent. Therefore, we also conducted experiments with a modified version of loss function: Quadratic Weighted Kappa [QWK; @delatorre2018].
 
@@ -275,7 +278,7 @@ tibble(
 
 ## LLDs
 
-For LLD models, eGeMaps voicing gives out the best performance for in-domain using weighted X-vector with CCE loss with 90.4% accuracy and 0.90 IRR (Table 4), which is also the best in-domain performance across all models. Weighted X-vector with self-attention provides relatively good performance for cross-domain data using ComPArE voicing, with Kappa loss at 58.5% accuracy and 0.43 IRR (Table 4), but the original X-Vector has a higher Kappa-loss for cross-domain with 0.46 IRR. Full eGeMaps and ComPArE does not fit well with the new model, with the best performance in eGeMaps full baseline only at 87.2% accuracy and 0.85 IRR (Table 6). The ComPArE full models were never able to fully converge and thus we cannot draw conclusions about their performances. (These are still under adjustment on both the learning rate algorithm and model itself.) We found that for cross-domain, QWK loss performs better than CCE loss in both accuracy and IRR, even if accuracy and IRR are still far from satisfactory. This results might yield ideas for future studies.
+For LLD models, eGeMaps voicing gives out the best performance for in-domain using weighted X-vector with CCE loss with 90.4% accuracy and 0.90 IRR (Table 4), which is also the best in-domain performance across all models. Weighted X-vector with self-attention provides relatively good performance for cross-domain data using ComPArE voicing, with Kappa loss at 58.5% accuracy and 0.43 IRR (Table 4), but the original X-Vector has a higher Kappa-loss for cross-domain with 0.46 IRR. Full eGeMaps and ComPArE does not fit well with the new model, with the best performance in eGeMaps full baseline only at 87.2% accuracy and 0.85 IRR (Table 6). The ComPArE full models were never able to fully converge and thus we cannot draw conclusions about their performances. (These are still under adjustment on both the learning rate algorithm and model itself.) We found that for cross-domain, QWK loss performs better than CCE loss in both accuracy and IRR, even if accuracy and IRR are still far from satisfactory. This result might yield ideas for future studies.
 
   
 ----

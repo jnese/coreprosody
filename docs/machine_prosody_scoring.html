@@ -1866,7 +1866,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#purpose">Purpose</a></li>
 <li><a href="#related-works">Related Works</a></li>
 <li><a href="#dataset">Dataset</a></li>
-<li><a href="#modelng">Modelng</a>
+<li><a href="#modeling">Modeling</a>
 <ul>
 <li><a href="#functional">Functional</a></li>
 <li><a href="#low-level-descriptor-convolutional-processing">Low Level Descriptor Convolutional Processing</a>
@@ -1911,7 +1911,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><p>We evaluate the use of weighted temporal pooling, inspired by X-Vectors <span class="citation" data-cites="okabe2018">(<a href="#ref-okabe2018" role="doc-biblioref">Okabe, Koshinaka, &amp; Shinoda, 2018</a>)</span>, and weighted Kappa loss <span class="citation" data-cites="delatorre2018">(<a href="#ref-delatorre2018" role="doc-biblioref">de la Torre, Puig, &amp; Valls, 2018</a>)</span> in prosody correctness classification.</p></li>
 <li><p>We conduct an ablation study to investigate the overall importance of each processing procedure.</p></li>
 </ol>
-<p>Our work not only builds upon the aforementioned works, but also differs in several respects. First, our goal is solely to assess prosody according to a <a href="https://jnese.github.io/coreprosody/human_prosody_scoring.html#the-core-prosody-rubric">novel 4-scale rubric</a> using conventional neural networks. Similar to many of these studies, our automated assessment is compared against expert judgement; however, we incorporate the disagreement of those judges into our model. Our sample size is considerably larger than previous studies both in terms of recordings and participants. While previous studies have informed our feature selection, we concentrate on both functional and prosodic low-level descriptors (LLDs) in the audio signal.</p>
+<p>Our work not only builds upon the aforementioned works, but also differs in several respects. First, our goal is solely to assess prosody according to a <a href="https://jnese.github.io/coreprosody/human_prosody_scoring.html#the-core-prosody-rubric">novel 4-point rubric</a> using conventional neural networks. Similar to many of these studies, our automated assessment is compared against expert judgement; however, we incorporate the disagreement of those judges into our model. Our sample size is considerably larger than previous studies both in terms of recordings and participants. While previous studies have informed our feature selection, we concentrate on both functional and prosodic low-level descriptors (LLDs) in the audio signal.</p>
 <h1 id="dataset">Dataset</h1>
 <p><em>A full description of the procedures for the data can be found <a href="https://jnese.github.io/coreprosody/human_prosody_scoring.html">here</a></em></p>
 <p>In order to design and evaluate our prosody classification algorithm, we collected audio samples of oral readings from a variety of schools in the Pacific Northwest region of the USA. (See <a href="https://jnese.github.io/core-blog/posts/2019-04-12-consequential-validity-study-procedures/">here</a> for study procedures.) Passages were written by an expert who also co-wrote the original easyCBM oral reading fluency <span class="citation" data-cites="alonzo2007prf">(<a href="#ref-alonzo2007prf" role="doc-biblioref">Alonzo &amp; Tindal, 2007</a>)</span> and reading comprehension passages <span class="citation" data-cites="alonzo2007rc">(<a href="#ref-alonzo2007rc" role="doc-biblioref">Alonzo, Liu, &amp; Tindal, 2007</a>)</span>. Each passage is an original work of fiction, and within 5 words of a targeted length: long = 85 words or medium = 50 words. Each passage: has a beginning, middle, and end; follows either a “problem/resolution” or “sequence of events” format; and contains minimal use of dialogue and symbols.</p>
@@ -1925,9 +1925,60 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ol>
 <p>Augmentation was applied randomly over a range of the adjustments taking care not to distort the student’s voice. Less frequent classes were over-sampled to ensure balanced classes. In total, 4,128 new samples were added to functional training data (100% increase) and 14,092 new samples were added to LDD training data (240% increase).</p>
 <p>From these samples, we used two kinds of features for model training. (1) Functional, summary data of the entire recording, were extracted with the 2016 Computational Paralinguistics Challenge - <strong>CompArE</strong> - <span class="citation" data-cites="weninger2013 schuller2014">(<a href="#ref-schuller2014" role="doc-biblioref">Schuller et al., 2014</a>; <a href="#ref-weninger2013" role="doc-biblioref">Weninger, Eyben, Schuller, Mortillaro, &amp; Scherer, 2013</a>)</span>. And (2) low-level descriptors (LLDs), individual features taken every 100th of a second, were extracted using both the Extended Geneva Minimalistic Acoustic Parameter Set - <strong>eGeMAPS</strong> <span class="citation" data-cites="eyben2015">(<a href="#ref-eyben2015" role="doc-biblioref">Eyben et al., 2015</a>)</span> - and the CompArE. A model without augmented functional data is used during the first part of training process to give a clear overview of augmented effect. Of all LLDs available, training is first done with sub-section data and then combined into the full result. We obtain three sub-sections together that made up full LLDs data. Based on our literature review, we believe the following to be the most relevant to prosody classification.</p>
-<p><strong>1. Functional(CompArE)</strong> * Quartile * Inter-quartile range * Percentile * Position of min and max * Relative duration LLD related * Mean, max, mean, and standard deviation of segment length * Gain of linear prediction (LP) * Coefficient</p>
-<p><strong>2. eGeMaps</strong> * Frequency-related (voicing-related) time series features + Logarithmic F0 on a semitone frequency scale, starting at 27.5 Hz (semitone 0) + Centre frequency and bandwidth of first, second, third formant * Energy-related frequency features, as they tend to be prosodic in nature (each of these features can be processed with a classical measure or via a convolutional filter) + Estimate of perceived signal intensity from an auditory spectrum * Spectral-related pitch features, as we expect them to allow for consistent comparisons (these features can be captured from the mel-scaled spectrogram using one dimensional convolution (across time)) + Linear regression slope of the logarithmic power spectrum within the band + Mel-Frequency Cepstral Coefficients + Difference of the spectra of two consecutive frames + Formant 1, 2, and 3 relative energies, as well as the ratio of the energy of the spectral harmonic peak at the first, second, third formant’s center frequency to the energy of the spectral peak at F0 + Ratio of energy of the first F0 harmonic (H1) to the energy of the second F0 harmonic (H2) and the highest harmonic in the third formant range (A3)</p>
-<p><strong>3. CompArE</strong> * Energy-related time series features, as they tend to be prosodic in nature (each of these features can be processed with a classical measure or via a convolutional filter) + Sum of auditory spectrum (loudness) + Sum of RASTA-style filtered auditory spectrum + RMS energy, zero-crossing rate * Spectral-related frequency features as we expect them to allow for consistent comparisons (these features can be captured from the mel-scaled spectrogram using one dimensional convolution (across time)) + RASTA-style auditory spectrum, bands 1–26 (0–8kHz) + Mel-frequency cepstral coefficients (MFCCs) + Spectral energy 250–650 Hz, 1 k–4 kkHz + Spectral flux, centroid, entropy, slope + Psychoacoustic sharpness, harmonicity + Spectral variance, skewness, kurtosis * Voicing-related (F0) pitch features + subharmonic summation (SHS) + Viterbi smoothed scaling (across consonants, fricatives, and plosives)</p>
+<p><strong>1. Functional(CompArE)</strong></p>
+<ul>
+<li>Quartile</li>
+<li>Inter-quartile range</li>
+<li>Percentile</li>
+<li>Position of min and max</li>
+<li>Relative duration LLD related</li>
+<li>Mean, max, mean, and standard deviation of segment length</li>
+<li>Gain of linear prediction (LP)</li>
+<li>Coefficient</li>
+</ul>
+<p><strong>2. eGeMaps</strong></p>
+<ul>
+<li>Frequency-related (voicing-related) time series features
+<ul>
+<li>Logarithmic F0 on a semitone frequency scale, starting at 27.5 Hz (semitone 0)</li>
+<li>Centre frequency and bandwidth of first, second, third formant</li>
+</ul></li>
+<li>Energy-related frequency features, as they tend to be prosodic in nature (each of these features can be processed with a classical measure or via a convolutional filter)
+<ul>
+<li>Estimate of perceived signal intensity from an auditory spectrum</li>
+</ul></li>
+<li>Spectral-related pitch features, as we expect them to allow for consistent comparisons (these features can be captured from the mel-scaled spectrogram using one dimensional convolution (across time))
+<ul>
+<li>Linear regression slope of the logarithmic power spectrum within the band</li>
+<li>Mel-Frequency Cepstral Coefficients</li>
+<li>Difference of the spectra of two consecutive frames</li>
+<li>Formant 1, 2, and 3 relative energies, as well as the ratio of the energy of the spectral harmonic peak at the first, second, third formant’s center frequency to the energy of the spectral peak at F0</li>
+<li>Ratio of energy of the first F0 harmonic (H1) to the energy of the second F0 harmonic (H2) and the highest harmonic in the third formant range (A3)</li>
+</ul></li>
+</ul>
+<p><strong>3. CompArE</strong></p>
+<ul>
+<li>Energy-related time series features, as they tend to be prosodic in nature (each of these features can be processed with a classical measure or via a convolutional filter)
+<ul>
+<li>Sum of auditory spectrum (loudness)</li>
+<li>Sum of RASTA-style filtered auditory spectrum</li>
+<li>RMS energy, zero-crossing rate</li>
+</ul></li>
+<li>Spectral-related frequency features as we expect them to allow for consistent comparisons (these features can be captured from the mel-scaled spectrogram using one dimensional convolution (across time))
+<ul>
+<li>RASTA-style auditory spectrum, bands 1–26 (0–8kHz)</li>
+<li>Mel-frequency cepstral coefficients (MFCCs)</li>
+<li>Spectral energy 250–650 Hz, 1 k–4 kkHz</li>
+<li>Spectral flux, centroid, entropy, slope</li>
+<li>Psychoacoustic sharpness, harmonicity</li>
+<li>Spectral variance, skewness, kurtosis</li>
+</ul></li>
+<li>Voicing-related (F0) pitch features
+<ul>
+<li>subharmonic summation (SHS)</li>
+<li>Viterbi smoothed scaling (across consonants, fricatives, and plosives)</li>
+</ul></li>
+</ul>
 <p>Note that, for CompArE, we also have the delta (defined as <span class="math inline">\(LDD⁄\Delta LDD\)</span>) of the above features to capture not only the magnitudes but also the relative changes. In addition, the following functions may be applied to the above LLD.</p>
 <ul>
 <li>Mean value of peaks</li>
@@ -1938,7 +1989,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Mean/SD of rising/falling slopes</li>
 <li>Linear regression slope, offset, quadratic error</li>
 </ul>
-<h1 id="modelng">Modelng</h1>
+<h1 id="modeling">Modeling</h1>
 <p>We use the previously described pre-processed dataset as training data for modeling. To analyze each model, the result must be compared to human scoring results through a loss function. Most works use the Categorical Cross Entropy (CCE) as a loss function, which is a classic loss function for many classification tasks. However, due to the nature of prosody scoring, classes have a quantitative relation between each other that CCE cannot represent. Therefore, we also conducted experiments with a modified version of loss function: Quadratic Weighted Kappa [QWK; <span class="citation" data-cites="delatorre2018"><a href="#ref-delatorre2018" role="doc-biblioref">de la Torre, Puig, &amp; Valls</a> (<a href="#ref-delatorre2018" role="doc-biblioref">2018</a>)</span>].</p>
 <p>QWK loss is related to the calculation of Inter-Rater Reliability (IRR) that is typically measured between two human raters. QWK quantifies the seriousness of the disagreement between human rating and model output as:</p>
 <p><span class="math display">\[
@@ -2177,7 +2228,7 @@ Kappa-Loss
 </table>
 </div>
 <h2 id="llds">LLDs</h2>
-<p>For LLD models, eGeMaps voicing gives out the best performance for in-domain using weighted X-vector with CCE loss with 90.4% accuracy and 0.90 IRR (Table 4), which is also the best in-domain performance across all models. Weighted X-vector with self-attention provides relatively good performance for cross-domain data using ComPArE voicing, with Kappa loss at 58.5% accuracy and 0.43 IRR (Table 4), but the original X-Vector has a higher Kappa-loss for cross-domain with 0.46 IRR. Full eGeMaps and ComPArE does not fit well with the new model, with the best performance in eGeMaps full baseline only at 87.2% accuracy and 0.85 IRR (Table 6). The ComPArE full models were never able to fully converge and thus we cannot draw conclusions about their performances. (These are still under adjustment on both the learning rate algorithm and model itself.) We found that for cross-domain, QWK loss performs better than CCE loss in both accuracy and IRR, even if accuracy and IRR are still far from satisfactory. This results might yield ideas for future studies.</p>
+<p>For LLD models, eGeMaps voicing gives out the best performance for in-domain using weighted X-vector with CCE loss with 90.4% accuracy and 0.90 IRR (Table 4), which is also the best in-domain performance across all models. Weighted X-vector with self-attention provides relatively good performance for cross-domain data using ComPArE voicing, with Kappa loss at 58.5% accuracy and 0.43 IRR (Table 4), but the original X-Vector has a higher Kappa-loss for cross-domain with 0.46 IRR. Full eGeMaps and ComPArE does not fit well with the new model, with the best performance in eGeMaps full baseline only at 87.2% accuracy and 0.85 IRR (Table 6). The ComPArE full models were never able to fully converge and thus we cannot draw conclusions about their performances. (These are still under adjustment on both the learning rate algorithm and model itself.) We found that for cross-domain, QWK loss performs better than CCE loss in both accuracy and IRR, even if accuracy and IRR are still far from satisfactory. This result might yield ideas for future studies.</p>
 <hr />
 <div class="layout-chunk" data-layout="l-body-outset">
 <table>
