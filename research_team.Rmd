@@ -4,6 +4,8 @@ title: "Research Team"
 #  Some additional details about the website
 output:
   distill::distill_article:
+    toc: true
+    toc_depth: 3
     theme: theme.css
 ---
 
@@ -129,15 +131,31 @@ Cornelis will consult with CORE + Prosody investigators to help derive the param
 ----
 
 ```{r george, results="asis"}
-# tibble(
-#   image = "<img src='images/sammit.jpg' style='border-radius: 50%; width: 90px'>",
-#   name = "**George Sammit, M.S.**<a href='mailto:gsammit@mail.smu.edu'> <i class='fa fa-envelope'></i></a><br>Machine Learning<br>",
-#   univ = "<img src='images/smu.png' style='border-radius: 0; width: 100px'>"
-# ) %>% 
-#   knitr::kable(col.names = NULL)
+tibble(
+  image = "<img src='images/sammit.jpg' style='border-radius: 50%; width: 90px'>",
+  name = "**George Sammit, M.S.**<a href='mailto:gsammit@mail.smu.edu'> <i class='fa fa-envelope'></i></a><br>Machine Learning<br>",
+  univ = "<img src='images/smu.png' style='border-radius: 0; width: 100px'>"
+) %>%
+  knitr::kable(col.names = NULL)
 ```
 
-<!-- George is a D.Engr. student at Southern Methodist University studying Software Engineering in the Lyle School of Engineering.  He holds a M.S. in Program & Project Management and a B.S. in Computer Science, both from the University of Michigan. He has 25 years of professional software development experience, most of which was acquired at Southwest Airlines Co., and holds several professional certifications. His interests include software development processes (particularly agile methods),  software engineering economics, and machine learning. -->
+George is a Principal Computer Scientist with the Intelligent Systems Division of the Southwest Research Institute, and a Computer Science Ph.D. student in the Bobby B. Lyle School of Engineering at the Southern Methodist University.  His research focuses on software engineering methods and processes, software engineering economics, and managing software projects.
+ 
+Working with Dr. Larson and fellow researchers at SMU, George developed the prosody classification models for the CORE + Prosody project, the results of which he presented at the [2022 IEEE International Conference on Acoustics, Speech and Signal Processing](https://jnese.github.io/coreprosody/dissemination.html).
+
+----
+
+```{r zhongdi, results="asis"}
+tibble(
+  image = "<img src='images/zhongdi-wu.jpg' style='border-radius: 50%; width: 90px'>",
+  name = "**Zhongdi Wu, M.S.**<a href='mailto:zhongdiw@mail.smu.edu'> <i class='fa fa-envelope'></i></a><br>Machine Learning<br>",
+  univ = "<img src='images/smu.png' style='border-radius: 0; width: 100px'>"
+) %>%
+  knitr::kable(col.names = NULL)
+
+```
+
+Zhongdi is a computer science PhD student at the Lyle School of Engineering at Southern Methodist University. He received a bachelor’s degree in Electric Engineering in Automation Control from North China Electric Power University and a master’s degree of Computer Science from Southern Methodist University. He is interested in machine learning, pattern recognition, and deep learning. He is currently working on several deep learning related projects.
 
 ----
 
