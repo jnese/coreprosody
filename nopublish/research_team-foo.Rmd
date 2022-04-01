@@ -1,0 +1,175 @@
+---
+title: "Research Team"
+#description: |
+#  Some additional details about the website
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+    theme: theme.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(fontawesome)
+```
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.collapsible {
+  background-color: #fffeea;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: 2px solid #A5352A;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  font-family: Merriweather;
+}
+
+.active, .collapsible:hover {
+  background-color: #A5352A} 
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  background-color: #fffeea;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="grid-item">
+  
+<div class="container">
+  <img src="images/jftnese.jpg" alt="Avatar" class="image">
+  <div class="overlay"><div class="text">Principal Investigator</div></div>
+</div>
+
+<p></p>
+<button type="button" class="collapsible"><center>About</center></button>
+<div class="content">
+
+<p>
+Joe is a Research Associate Professor at [Behavioral Research and Teaching](https://www.brtprojects.org/) at the University of Oregon. He received his Ph.D. in school psychology from the University of Maryland, and his B.A from the University of California at Santa Barbara. His goal is to bridge assessment and intervention in a meaningful way; to provide access to reliable and relevant data, interpret student responsiveness to intervention, and offer instructional recommendations to teachers to increase student achievement. Joe was the Principal Investigator of [CORE](https://ies.ed.gov/funding/grantsearch/details.asp?ID=1492), a project to develop and validate a computerized assessment system of oral reading fluency that serves as the foundational work for CORE + Prosody.
+
+As PI of CORE + Prosody, Joe is responsible for all aspects of the CORE + Prosody project. He serves as a data scientist for the project, and leads the Human-Rated Prosody and the Comprehension & Cognitive Load Studies.
+</p>
+</div>
+<p></p>
+
+</div>  
+
+<div class="grid-container">
+  <div class="grid-item">
+  
+<div class="container">
+  <img src="images/kamata.jpg" alt="Avatar" class="image">
+  <div class="overlay"><div class="text">Co-Principal Investigator</div></div>
+</div>
+
+<p></p>
+<button type="button" class="collapsible"><center>About</center></button>
+<div class="content">
+
+<p>
+Aki is a Professor in the Department of Education Policy & Leadership and the Department of Psyschology at Southern Methodist University. His primary research interest is psychometrics and educational and psychological measurement, focusing on development and implementation of item-level test data analysis methodology through various modeling framework, including item response theory, multilevel modeling, and structural equation modeling. Aki is also the Principal Investigator of a project to [Develop Computational Tools for Model-Based Oral Reading Fluency Assessments](https://ies.ed.gov/funding/grantsearch/details.asp?ID=3410).
+
+As Co-PI of CORE + Prosody, Aki shares responsibility for all aspects of the project, and leads all psychometric modeling, including the study to measure and score prosody, and the calibration, equating, linking study.
+</p>
+</div>
+<p></p>
+
+</div> 
+
+
+
+
+</div>
+
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
+
+
