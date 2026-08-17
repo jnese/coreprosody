@@ -12,7 +12,7 @@ output:
   distill::distill_article:
     toc: true
     toc_depth: 2
-    theme: theme.css
+    theme: core.css
 ---
 
 ```{r setup, include=FALSE}
@@ -22,6 +22,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 # Conferences
+
+<p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
+**(2) Joe Nese (2022). [*A Summary of An Effort to Improve the Practical and Psychometric Properties of Traditional ORF.*](https://raw.githubusercontent.com/jnese/SSSR_2022/main/scripts/sssr_2022_jftnese.pdf) Society for the Scientific Study of Reading (SSSR), Newport Beach, CA.**
+</p> 
+
+<font size="-0.5">
+
+> Oral reading fluency (ORF) is an essential part of reading proficiency, and curriculum-based measurement of oral reading fluency is perhaps the most prevalent reading assessment used in classrooms across the U.S. CORE is a computerized ORF assessment framework that uses a scoring algorithm based on automatic speech recognition (ASR) and a latent variable psychometric model to produce model-based ORF words scores (words correct per minute [WCPM]). The purpose of this paper is to review the findings of CORE, a project developed to improve some of the practical and psychometric properties of traditional ORF assessment, including: administration errors, opportunity cost, passage inequivalence, score reliability and precision, and consequential validity. The first study ([Nese & Kamata, 2021](https://psycnet.apa.org/record/2020-81606-001)) applied mixed-effect models to estimate differences in ORF scores and reported evidence to support ASR scoring (compared to human scoring) and shorter ORF passages (comparable to traditional ORF passages). The second study ([Nese & Kamata, 2020](https://journals.sagepub.com/doi/pdf/10.1177/1534508420937801?casa_token=T2NeSfs7Pl0AAAAA:mbkSLGb8B9GFSieAGVBeJmcIUaXipIOeDJLX9KquuQiPqMXeiOkfnSMNxL7x1ojQGS5IYylPEpdu0Q)) evaluated 4,084 ORF scores from 1,021 students in and found that the conditional SEMs of model-based WCPM estimates ([Kara et al., 2020](https://journals.sagepub.com/doi/pdf/10.1177/0013164419900208?casa_token=EdF1QvSGMsUAAAAA:GXoTPkfRb9OMCoIK5ls9r9E6UDGzk1V3HTFD1eTimQq_fBYFimEZTDla2vGfihz27pNK6YDZeQ7YSg)) were substantially smaller than the reported SEMs of traditional ORF systems, especially for scores below the 25th percentile. The third study ([Nese, 2022](https://journals.sagepub.com/doi/pdf/10.1177/23328584211071112)) compared CORE model-based WCPM scores to traditional ORF WCPM and found that CORE had better within-growth properties, and better predictive performance, providing preliminary evidence that CORE can be used for consequential assessment. We discuss these findings in the context of the current state and future advances in oral reading fluency assessment.
+
+
+</font>
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
 **(1) George Sammit, Zhongjie Wu, Yihao Wang, Zhongdi Wu, Akihito Kamata, Joe Nese, and Eric C. Larson (2022). [*Automated Prosody Classification for Oral Reading Fluency with Quadratic Kappa Loss and Attentive X-vectors.*](https://s2.smu.edu/~eclarson/pubs/2022_Prosody.pdf ) International Conference on Acoustics, Speech, and Signal Processing (ICASSP 2022), Singapore.**
