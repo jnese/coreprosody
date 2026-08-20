@@ -1,0 +1,29 @@
+project:
+  type: website
+
+website:
+  title: "CORE + Prosody"
+  navbar:
+    right:
+      - text: "Prosody"
+        menu:
+          - text: "Human Prosody Scoring"
+            href: human_prosody_scoring.html
+          - text: "Machine Prosody Scoring"
+            href: machine_prosody_scoring.html
+          - text: "Feasibility of Use"
+            href: feasibility.html
+      - text: "Research Team"
+        href: research_team.html
+      - text: "Dissemination"
+        href: dissemination.html
+  page-footer:
+    center: |
+      The research reported here was supported by the [Institute of Education Sciences](https://ies.ed.gov/), U.S. Department of Education, through Grant [R305A200018](https://ies.ed.gov/funding/grantsearch/details.asp?ID=3427) to University of Oregon. The opinions expressed are those of the authors and do not represent views of the Institute or the U.S. Department of Education.
+
+      © Copyright 2026 Joseph F. T. Nese and the [University of Oregon](https://www.uoregon.edu/).
+
+      Software licensed under the [Creative Commons, v4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+format:
+  html:
+    theme: [cosmo, theme.scss]

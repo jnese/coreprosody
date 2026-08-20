@@ -1,0 +1,132 @@
+/*-- scss:defaults --*/
+
+/* Custom fonts — carried over from the Distill theme(s).
+   Keep this at the top of the scss:defaults block.        */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather');
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css2?family=Give+You+Glory');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible');
+
+/*-- Fonts --------------------------------------------------
+   Distill: --heading-font / --body-font / --navbar-font / --mono-font
+   Quarto/Bootstrap equivalents below.                        */
+$font-family-sans-serif: "Lato", sans-serif;      // was --body-font
+$headings-font-family:   "Merriweather", serif;   // was --heading-font
+$font-family-monospace:  monospace;                // was --mono-font
+// --navbar-font ("Merriweather") has no direct Bootstrap variable;
+// see .navbar-title override in scss:rules if you want the nav
+// text itself set in Merriweather rather than the body sans-serif.
+
+/*-- Base document colors -----------------------------------
+   Distill: --body-color, body { background-color }          */
+$body-color: rgba(0, 0, 0, 0.8);   // was html --body-color
+$body-bg:    #fffeea;              // was body { background-color }
+$link-color: #A5352A;              // ties links to the accent red used elsewhere
+
+/*-- Headings -------------------------------------------------
+   Distill: --header-color                                    */
+$headings-color: #2b323f;
+
+/*-- Code -----------------------------------------------------
+   Distill: --code-size                                        */
+$code-block-font-size: 14px; // was --code-size
+
+/*-- Navbar ----------------------------------------------------
+   Distill: .navbar / .distill-site-header
+   { --bkgd-color, --text-color, --hover-color, --text-size }
+   (Both selectors from the two Distill files were identical in
+   value, so they collapse into one set of Quarto navbar vars.)  */
+$navbar-bg: #A5352A;                    // was --bkgd-color
+$navbar-fg: rgba(255, 255, 255, 0.8);   // was --text-color
+$navbar-hl: #6699AC;                    // was --hover-color
+
+/*-- Footer ------------------------------------------------------
+   Distill: .nav-footer / .distill-site-footer
+   { --bkgd-color, --text-color, --hover-color }                 */
+$footer-bg: #A5352A;
+$footer-fg: rgba(255, 255, 255, 0.8);
+
+/*-- Dropdown menus (navbar submenus) -----------------------------
+   Distill: .nav-dropdown-content, .nav-dropdown-content a:hover  */
+$dropdown-bg:               #AE493F;
+$dropdown-link-color:       rgba(255, 255, 255, 0.8);
+$dropdown-link-hover-bg:    #B75D54;
+$dropdown-link-hover-color: rgba(255, 255, 255, 0.8);
+
+
+/*-- scss:rules --*/
+
+/* Page width — was .container-fluid { max-width: 1180px; ... } */
+.content {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Title banner — GENERIC styling only.
+   Distill's d-title had either a flat color (theme.css) or a
+   background image (core.css). Quarto's title-block-banner is a
+   per-PAGE YAML field, not a site-wide style, so the image itself
+   is deliberately NOT set here — see index.qmd front matter below.
+   This block only controls size/text color wherever a banner
+   happens to be turned on for a given page.                      */
+.quarto-title-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF; // was html --title-color
+}
+
+.quarto-title-banner .title {
+  font-size: 50px; // was html --title-size
+}
+
+/* Byline / author metadata — Distill's d-byline.
+   Quarto's equivalent is the title-meta block.                  */
+.quarto-title-meta-heading {
+  font-size: 0.6rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.quarto-title-meta-contents {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Table of contents — Distill's .d-contents.
+   Quarto's sidebar TOC lives under #TOC / .sidebar nav.          */
+#toc-title {
+  font-size: 18px;
+}
+
+#TOC a,
+nav[role="doc-toc"] a {
+  font-size: 13px;
+}
+
+/* Figure captions — was --fig-cap-size / --fig-cap-color */
+figcaption,
+.figure-caption {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Asides — was html --aside-size / --aside-color */
+.aside,
+aside {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Appendix section — Distill's d-appendix.
+   Quarto's closest equivalent is .quarto-appendix-contents.      */
+.quarto-appendix-contents {
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.quarto-appendix-heading {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.65);
+}
