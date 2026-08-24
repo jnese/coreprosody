@@ -28,7 +28,7 @@ embed_file_quarto <- function(path, text, filename = basename(path)) {
 # CORE + Prosody
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
-**Leilani Sáez, Makayla Whitney, Joe Nese, Julie Alonzo, Rhonda Nese (2025). `r embed_file_quarto(path = here::here("nopublish", "doi_101002trtr2368.pdf"), text = "Reading prosody: A listening guide for teachers.")` _The Reading Teacher_, _78_, 243-251.**
+**Leilani Sáez, Makayla Whitney, Joe Nese, Julie Alonzo, Rhonda Nese (2025). `r embed_file_quarto(path = here::here("pubs", "doi_101002trtr2368.pdf"), text = "Reading prosody: A listening guide for teachers.")` _The Reading Teacher_, _78_, 243-251.**
 </p> 
 
 <font size="-0.5">
@@ -41,7 +41,7 @@ to three reading prosody components: intonation, amplitude, and timing.
 ----
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
-**Yihao Wang, Zhongdi Wu, Akihito Kamata, Joseph Nese, Vedant Nilabh, & Eric C. Larson (2025, April). `r embed_file_quarto(path = here::here("nopublish", "unified_model.pdf"), text = "A Unified Model for Oral Reading Fluency and Student Prosody.")` Presented at the IEEE International Conference on Acoustics, Speech and Signal Processing (IEEE ICASSP), Hyderabad, India.**
+**Yihao Wang, Zhongdi Wu, Akihito Kamata, Joseph Nese, Vedant Nilabh, & Eric C. Larson (2025, April). `r embed_file_quarto(path = here::here("pubs", "unified_model.pdf"), text = "A Unified Model for Oral Reading Fluency and Student Prosody.")` Presented at the IEEE International Conference on Acoustics, Speech and Signal Processing (IEEE ICASSP), Hyderabad, India.**
 </p>
 
 <font size="-0.5">
@@ -53,7 +53,7 @@ to three reading prosody components: intonation, amplitude, and timing.
 ----
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
-**Yihao Wang, Zhongdi Wu, Akihito Kamata, Joseph Nese, Vedant Nilabh, & Eric C. Larson (2024, April). `r embed_file_quarto(path = here::here("nopublish", "IEEE-ICASSP_2024.pdf"), text = "Improving Oral Reading Fluency Assessment Through Sub-Sequence Matching of Acoustic Word Embeddings.")` Presented at the IEEE International Conference on Acoustics, Speech and Signal Processing (IEEE ICASSP), Seoul, Korea.**
+**Yihao Wang, Zhongdi Wu, Akihito Kamata, Joseph Nese, Vedant Nilabh, & Eric C. Larson (2024, April). `r embed_file_quarto(path = here::here("pubs", "IEEE-ICASSP_2024.pdf"), text = "Improving Oral Reading Fluency Assessment Through Sub-Sequence Matching of Acoustic Word Embeddings.")` Presented at the IEEE International Conference on Acoustics, Speech and Signal Processing (IEEE ICASSP), Seoul, Korea.**
 </p>
 
 <font size="-0.5">
@@ -65,7 +65,7 @@ to three reading prosody components: intonation, amplitude, and timing.
 ----
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
-**Yusuf Kara, Akihito Kamata, Xin Qiao, Nelis Potgieter, & Joe Nese (2023). `r embed_file_quarto(path = here::here("nopublish", "doi_0117700131644221148122.pdf"), text = "Equating oral reading fluency scores: A model-based approach.")` Educational and Psychological Measurement._Educational and Psychological mMeasurement, 84_, 190-209.**
+**Yusuf Kara, Akihito Kamata, Xin Qiao, Nelis Potgieter, & Joe Nese (2023). `r embed_file_quarto(path = here::here("pubs", "doi_0117700131644221148122.pdf"), text = "Equating oral reading fluency scores: A model-based approach.")` Educational and Psychological Measurement._Educational and Psychological mMeasurement, 84_, 190-209.**
 </p>
 
 <font size="-0.5">
@@ -77,7 +77,7 @@ to three reading prosody components: intonation, amplitude, and timing.
 ----
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
-**Zhongjie Wu, Eric C. Larson, Makoto Sano, Doris Baker, Nathan Gage, & Akihito Kamata, (2023, July). `r embed_file_quarto(path = here::here("nopublish", "acmlas_2023.pdf"), text = "Towards Scalable Vocabulary Acquisition Assessment with BERT.")` ACM International Conference on Learning at Scale (L@S), Copenhagen, Denmark.**
+**Zhongjie Wu, Eric C. Larson, Makoto Sano, Doris Baker, Nathan Gage, & Akihito Kamata, (2023, July). `r embed_file_quarto(path = here::here("pubs", "acmlas_2023.pdf"), text = "Towards Scalable Vocabulary Acquisition Assessment with BERT.")` ACM International Conference on Learning at Scale (L@S), Copenhagen, Denmark.**
 </p>
 
 <font size="-0.5">
@@ -90,7 +90,7 @@ to three reading prosody components: intonation, amplitude, and timing.
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
 
-**Kuo Wang, Xin Qiao, George Sammit, Eric C. Larson, Joe Nese, and Akihito Kamata (2023, April). `r embed_file_quarto(path = here::here("nopublish", "KuoWang_NCME2023_FinalPaper.pdf"), text = "Improving Automated Scoring of Prosody Using Deep Learning Algorithm.")` Presented at National Council for Measurement in Education (NCME), Chicago, IL.**
+**Kuo Wang, Xin Qiao, George Sammit, Eric C. Larson, Joe Nese, and Akihito Kamata (2023, April). `r embed_file_quarto(path = here::here("pubs", "KuoWang_NCME2023_FinalPaper.pdf"), text = "Improving Automated Scoring of Prosody Using Deep Learning Algorithm.")` Presented at National Council for Measurement in Education (NCME), Chicago, IL.**
 
 </p>
 
@@ -153,7 +153,7 @@ to three reading prosody components: intonation, amplitude, and timing.
 ----
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
-**Nese, J. F. T., & Kamata, A. (2021). `r embed_file_quarto(path = here::here("nopublish", "doi_10137spq0000415.pdf"), text = "Evidence for automated scoring and shorter passages of CBM-R in early elementary school.")` *School Psychology, 36*, 47-59.**</p>
+**Nese, J. F. T., & Kamata, A. (2021). `r embed_file_quarto(path = here::here("pubs", "doi_10137spq0000415.pdf"), text = "Evidence for automated scoring and shorter passages of CBM-R in early elementary school.")` *School Psychology, 36*, 47-59.**</p>
 
 <font size="-0.5">
 
@@ -164,7 +164,7 @@ to three reading prosody components: intonation, amplitude, and timing.
 ----
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
-**Nese, J. F. T., & Kamata, A. (2021). `r embed_file_quarto(path = here::here("nopublish", "doi_1011771534508420937801.pdf"), text = "Addressing the large standard error of traditional CBM-R: Estimating the conditional standard error of a model-based estimate of CBM-R.")` *Assessment for Effective Intervention, 47*, 53-58.**</p>
+**Nese, J. F. T., & Kamata, A. (2021). `r embed_file_quarto(path = here::here("pubs", "doi_1011771534508420937801.pdf"), text = "Addressing the large standard error of traditional CBM-R: Estimating the conditional standard error of a model-based estimate of CBM-R.")` *Assessment for Effective Intervention, 47*, 53-58.**</p>
 
 <font size="-0.5">
 
@@ -173,7 +173,7 @@ to three reading prosody components: intonation, amplitude, and timing.
 </font>
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
-**Kara, Y., Kamata, A., Potgieter, C., & Nese, J. F. (2020). `r embed_file_quarto(path = here::here("nopublish", "doi_1011770013164419900208.pdf"), text = "Estimating model-based oral reading fluency: A Bayesian approach.")` *Educational and Psychological Measurement, 80*, 847-869.**</p>
+**Kara, Y., Kamata, A., Potgieter, C., & Nese, J. F. (2020). `r embed_file_quarto(path = here::here("pubs", "doi_1011770013164419900208.pdf"), text = "Estimating model-based oral reading fluency: A Bayesian approach.")` *Educational and Psychological Measurement, 80*, 847-869.**</p>
 
 ----
 
