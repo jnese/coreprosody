@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "!nopublish/"
 
 website:
   title: "CORE + Prosody"
