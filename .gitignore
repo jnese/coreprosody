@@ -1,5 +1,6 @@
 /nopublish/*
-
+/_site/
+/.quarto/
 
 .Rproj.user
 .Rhistory
