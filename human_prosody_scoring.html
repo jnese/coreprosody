@@ -1,0 +1,3136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Joseph F. T. Nese">
+<meta name="author" content="Makayla Whitney">
+<meta name="author" content="Julie Alonzo">
+<meta name="author" content="Leilani Sáez">
+<meta name="author" content="Rhonda N. T. Nese">
+<meta name="dcterms.date" content="2020-01-01">
+
+<title>Human-Rated Prosody Study – CORE + Prosody</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-829dcc5f78a079332db9f5deb86d3dcb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f7213992ab76de1c970c0b1ca98e9637.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="theme.scss">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">CORE + Prosody</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prosody" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Prosody</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-prosody">    
+        <li>
+    <a class="dropdown-item" href="./human_prosody_scoring.html">
+ <span class="dropdown-text">Human Prosody Scoring</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./machine_prosody_scoring.html">
+ <span class="dropdown-text">Machine Prosody Scoring</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./feasibility.html">
+ <span class="dropdown-text">Feasibility of Use</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./research_team.html"> 
+<span class="menu-text">Research Team</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dissemination.html"> 
+<span class="menu-text">Dissemination</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#audio-recordings" id="toc-audio-recordings" class="nav-link" data-scroll-target="#audio-recordings">Audio Recordings</a>
+  <ul class="collapse">
+  <li><a href="#core-orf-passages" id="toc-core-orf-passages" class="nav-link" data-scroll-target="#core-orf-passages">CORE ORF Passages</a></li>
+  <li><a href="#audio-file-selection" id="toc-audio-file-selection" class="nav-link" data-scroll-target="#audio-file-selection">Audio File Selection</a></li>
+  </ul></li>
+  <li><a href="#research-team" id="toc-research-team" class="nav-link" data-scroll-target="#research-team">Research Team</a></li>
+  <li><a href="#prosody-rubric-development" id="toc-prosody-rubric-development" class="nav-link" data-scroll-target="#prosody-rubric-development">Prosody Rubric Development</a>
+  <ul class="collapse">
+  <li><a href="#the-core-prosody-rubric" id="toc-the-core-prosody-rubric" class="nav-link" data-scroll-target="#the-core-prosody-rubric">The CORE + Prosody Rubric</a></li>
+  <li><a href="#exemplar-audio-files" id="toc-exemplar-audio-files" class="nav-link" data-scroll-target="#exemplar-audio-files">Exemplar Audio Files</a></li>
+  </ul></li>
+  <li><a href="#prosody-rater-recruitment" id="toc-prosody-rater-recruitment" class="nav-link" data-scroll-target="#prosody-rater-recruitment">Prosody Rater Recruitment</a></li>
+  <li><a href="#prosody-certification" id="toc-prosody-certification" class="nav-link" data-scroll-target="#prosody-certification">Prosody Certification</a></li>
+  <li><a href="#training-development-implementation" id="toc-training-development-implementation" class="nav-link" data-scroll-target="#training-development-implementation">Training Development &amp; Implementation</a>
+  <ul class="collapse">
+  <li><a href="#training-session-1" id="toc-training-session-1" class="nav-link" data-scroll-target="#training-session-1">Training Session #1</a></li>
+  <li><a href="#training-session-2" id="toc-training-session-2" class="nav-link" data-scroll-target="#training-session-2">Training Session #2</a></li>
+  </ul></li>
+  <li><a href="#prosody-rating-procedures" id="toc-prosody-rating-procedures" class="nav-link" data-scroll-target="#prosody-rating-procedures">Prosody Rating Procedures</a>
+  <ul class="collapse">
+  <li><a href="#prosody-raters-sample" id="toc-prosody-raters-sample" class="nav-link" data-scroll-target="#prosody-raters-sample">Prosody Raters: Sample</a></li>
+  <li><a href="#prosody-raters-certification" id="toc-prosody-raters-certification" class="nav-link" data-scroll-target="#prosody-raters-certification">Prosody Raters: Certification</a></li>
+  <li><a href="#prosody-ratings" id="toc-prosody-ratings" class="nav-link" data-scroll-target="#prosody-ratings">Prosody Ratings</a></li>
+  
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Human-Rated Prosody Study</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Joseph F. T. Nese </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Oregon
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Makayla Whitney </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Oregon
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Julie Alonzo </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Oregon
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Leilani Sáez </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Oregon
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Rhonda N. T. Nese </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Oregon
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 1, 2020</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><span id="top"></span></p>
+<section id="purpose" class="level1">
+<h1>Purpose</h1>
+<p>Oral reading fluency (ORF), generally defined as reading quickly, accurately, and with prosody, is an essential part of reading proficiency. Prosody, reading with appropriate expression and phrasing, is one way to demonstrate that a reader understands the meaning of the text.</p>
+<p>The purpose of this study is to collect prosody ratings of audio recordings of students’ ORF. These human-rated prosody scores will serve as the basis for training an algorithm that can be used to automatically generate prosody scores from students’ oral reading.</p>
+</section>
+<section id="audio-recordings" class="level1">
+<h1>Audio Recordings</h1>
+<p>Audio recordings of students in Grades 2 through 4 reading brief ORF passages were collected as part of an <a href="https://ies.ed.gov/funding/grantsearch/details.asp?ID=1492">IES funded project</a> called Computerized Oral Reading Evaluation, or <a href="https://jnese.github.io/core-blog/">CORE</a>. CORE combines automatic speech recognition (ASR) to score ORF accuracy and rate, with a latent variable psychometric model to scale, equate, and link scores across Grades 2 through 4. The primary goal of CORE is to develop an ORF assessment system with the potential to reduce: (a) human ORF administration errors, by standardizing administration setting, delivery, and scoring; (b) the time cost of ORF administration, by allowing small-group or whole-classroom testing; (c) the resource cost to train staff to administer and score the ORF assessment; and (d) the standard error of ORF measurement.</p>
+<p>The work conducted in the <a href="https://ies.ed.gov/funding/grantsearch/details.asp?ID=3427">current project</a> extends this line of research by incorporating prosody into the measurement model.</p>
+<p>The <a href="https://jnese.github.io/core-blog/posts/2019-04-12-consequential-validity-study-procedures/">Consequential Validity Study</a> from the original CORE project conducted in 2017-18 and 2018-19 resulted in the accumulation of 90,720 audio files. Of these, 8,713 were excluded from the current study because they were recordings of students reading the criterion easyCBM ORF passages from the original study while the remaining 82,007 (90.4%) represented recordings of students reading brief (approximately 50-85 word) passages developed specifically for the CORE project. From the 82,007 eligible audio recordings, only those that were at least ten seconds long were selected (to screen for empty or incomplete files) for a final corpus of 78,712 audio files.</p>
+<section id="core-orf-passages" class="level2">
+<h2 class="anchored" data-anchor-id="core-orf-passages">CORE ORF Passages</h2>
+<p>CORE passages were written by a former teacher, who also co-wrote the original easyCBM ORF and reading comprehension passages. Each CORE passage is an original work of fiction, and within 5 words of a targeted length: <em>long</em> = 85 words or <em>medium</em> = 50 words. Each passage has a beginning, middle, and end, follows either a “problem/resolution” or “sequence of events” format, and contains minimal use of dialogue and symbols. Exclusion rules for what could not appear in passages included: religious themes; trademark names, places, products; cultural/ethnic depictions; age-inappropriate themes (e.g., violence, guns, tobacco, drugs). All final CORE passages were reviewed by two experts in assessment for screening and progress monitoring for errors (e.g., format and grammatical), and bias (e.g., gender, cultural, religious, geographical). Final passages included 150 total passages, 50 at each of Grades 2-4, with 20 long passages (80-90 words), and 30 medium passages (45-55 words) for each grade.</p>
+</section>
+<section id="audio-file-selection" class="level2">
+<h2 class="anchored" data-anchor-id="audio-file-selection">Audio File Selection</h2>
+<p>For the current study, a two-step process was used to select 200 audio files for 10 CORE ORF passages at each of Grades 2 through 4.</p>
+<p>First, for each grade and passage length the 5 CORE passages with the greatest number of audio file records were selected to create as large an item bank as possible. This process resulted in the selection of 10 CORE passages (5 long and 5 medium) for each of Grades 2 – 4, 30 passages in all.</p>
+<p>Second, stratified random sampling was applied to select 200 audio recordings of each CORE passage, oversampling for English learners (ELs) and students with disabilities (SWDs), two student groups for which the ASR may be less accurate. The stratified random sampling plan led to the following quantities of sampled audio files: 5 students (2.5%) dually classified as EL and SWD, 65 students (32.5%) classified as EL only, 65 students (32.5%) classified as SWD only, and 65 students (32.5%) classified as neither EL nor SWD. A cascading logic was implemented, such that when fewer than 5 recordings included students dually classified as EL and SWD, the remainder of recordings was sampled from students classified as EL only. If there were insufficient audio recordings from EL only students, the remainder was sampled from students classified as SWD only. The remainder of audio recordings was sampled from students classified as neither EL nor SWD, of which there were ample recordings.</p>
+<p>The design of the project stipulated that each of the 200 audio files per CORE passage (10 passages * 3 grade levels * 200 recordings = 6,000 audio files) was to be rated for prosody by two different raters for a total of 12,000 prosody ratings (6,000 * 2 ratings = 12,000 total prosody ratings). The 6,000 audio files were grouped into 120 sets of 50 for distribution to human raters. The 200 audio files per CORE passage were split into four sets, such that each set of 50 contained audio files of students reading the same passage. This structure was used to allow raters to get familiar with a passage and thus provide more reliable ratings. The sets were manually distributed to raters required, descending by grade and passage such that all four sets of the first Grade 4 passage were sent to the first eight raters (as each set was rated twice), and continuing through the last Grade 2 passage.</p>
+<p>Of the 6,000 selected audio files 836 (14%) had to be replaced because they had no audio available to score; either there was no audio (e.g., the student was muted or advanced without reading), or the audio did not allow the rater to confidently give a prosody score (e.g., poor audio quality, too much background noise, a very quiet reader). All audio files were replaced with a reading from the same CORE passage. For <em>n</em> audio files that needed to be replaced for a CORE passage, <em>n</em> <span class="math inline">\(\times\)</span> 1.175 (17.5% of <em>n</em>) were sampled to account for potential audio recording with no available audio in the replacement set. An effort was made to replace audio files read by a student with the same EL/SWD classification. That is, the same cascading logic as previously described was applied, such that when the number of recordings for students dually classified as EL and SWD was less than required in our sampling plan, the remainder was sampled from students classified as EL only. If there were insufficient audio recordings from EL only students, the remainder was sampled from students classified as SWD only. Insufficient recordings led to the remainder of audio recordings being sampled from students classified as neither EL nor SWD, of which there were ample recordings. An additional 998 audio files were distributed to the human raters as replacements.</p>
+<p>After the 998 audio file replacements were scored, there remained five CORE passages that had less than 200 audio files with two different prosody ratings: three CORE passages had 199 audio files, and two had 197 audio files. For <em>n</em> (1 or 3) audio files that needed to be replaced for a CORE passage, <em>n</em> <span class="math inline">\(\times\)</span> 7 were sampled to account for potential audio recording with no available audio in the replacement set. These audio files were randomly sampled (without stratifying for ELs and SWDs) from those remaining for the respective CORE passages.</p>
+<p>After all usable audio files were selected the full sample included 6,096 audio files each rated twice. Of these from 1,342 students (4,068 in Grade 2, 4,070 in Grade 3, 4,054 in Grade 4). The number of audio files per student in the final sample ranged from 2 to 44.</p>
+<p>The results of the stratification yielded a sample of 6,096 audio files that was 2% (<em>n</em> = 256) EL and SWD, 23% (<em>n</em> = 2848) EL only, 29% (<em>n</em> = 3532) SWD only, and 46% (<em>n</em> = 5556) neither EL or SWD.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="jcnufmdcko" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jcnufmdcko table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jcnufmdcko thead, #jcnufmdcko tbody, #jcnufmdcko tfoot, #jcnufmdcko tr, #jcnufmdcko td, #jcnufmdcko th {
+  border-style: none;
+}
+
+#jcnufmdcko p {
+  margin: 0;
+  padding: 0;
+}
+
+#jcnufmdcko .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jcnufmdcko .gt_title {
+  color: #333333;
+  font-size: small;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jcnufmdcko .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jcnufmdcko .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jcnufmdcko .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jcnufmdcko .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jcnufmdcko .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jcnufmdcko .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jcnufmdcko .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jcnufmdcko .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jcnufmdcko .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jcnufmdcko .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jcnufmdcko .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jcnufmdcko .gt_row {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jcnufmdcko .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jcnufmdcko .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jcnufmdcko .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jcnufmdcko .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jcnufmdcko .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jcnufmdcko .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jcnufmdcko .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jcnufmdcko .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jcnufmdcko .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jcnufmdcko .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jcnufmdcko .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jcnufmdcko .gt_left {
+  text-align: left;
+}
+
+#jcnufmdcko .gt_center {
+  text-align: center;
+}
+
+#jcnufmdcko .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jcnufmdcko .gt_font_normal {
+  font-weight: normal;
+}
+
+#jcnufmdcko .gt_font_bold {
+  font-weight: bold;
+}
+
+#jcnufmdcko .gt_font_italic {
+  font-style: italic;
+}
+
+#jcnufmdcko .gt_super {
+  font-size: 65%;
+}
+
+#jcnufmdcko .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jcnufmdcko .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jcnufmdcko .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jcnufmdcko .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jcnufmdcko .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jcnufmdcko .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jcnufmdcko .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jcnufmdcko .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jcnufmdcko div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="gt_heading header">
+<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Sample Demographic Characteristics</td>
+</tr>
+<tr class="gt_col_headings gt_spanner_row even">
+<th rowspan="2" id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="level 1; stat_0_1" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="col"><div class="gt_column_spanner">
+<strong>By Student</strong>
+</div></th>
+<th id="level 1; stat_0_2" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="col"><div class="gt_column_spanner">
+<strong>By Audiofile</strong>
+</div></th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="stat_0_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 1,342</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="stat_0_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 6,096</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Grade</td>
+<td class="gt_row gt_center" headers="stat_0_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_0_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_0_1">464 (35%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">2,034 (33%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_0_1">430 (32%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">2,035 (33%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;4</td>
+<td class="gt_row gt_center" headers="stat_0_1">448 (33%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">2,027 (33%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Gender</td>
+<td class="gt_row gt_center" headers="stat_0_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_0_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Female</td>
+<td class="gt_row gt_center" headers="stat_0_1">595 (49%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">2,488 (46%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Male</td>
+<td class="gt_row gt_center" headers="stat_0_1">609 (51%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">2,919 (54%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;(Missing)</td>
+<td class="gt_row gt_center" headers="stat_0_1">138</td>
+<td class="gt_row gt_center" headers="stat_0_2">689</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Ethnicity</td>
+<td class="gt_row gt_center" headers="stat_0_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_0_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic/Latino</td>
+<td class="gt_row gt_center" headers="stat_0_1">315 (26%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">1,750 (32%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not Hispanic/Latino</td>
+<td class="gt_row gt_center" headers="stat_0_1">889 (74%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">3,657 (68%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;(Missing)</td>
+<td class="gt_row gt_center" headers="stat_0_1">138</td>
+<td class="gt_row gt_center" headers="stat_0_2">689</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Race</td>
+<td class="gt_row gt_center" headers="stat_0_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_0_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;American Indian/Native Alaskan</td>
+<td class="gt_row gt_center" headers="stat_0_1">49 (4.1%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">275 (5.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Asian</td>
+<td class="gt_row gt_center" headers="stat_0_1">9 (0.7%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">64 (1.2%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Black/African American</td>
+<td class="gt_row gt_center" headers="stat_0_1">6 (0.5%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">27 (0.5%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic</td>
+<td class="gt_row gt_center" headers="stat_0_1">46 (3.8%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">172 (3.2%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Multi-Racial</td>
+<td class="gt_row gt_center" headers="stat_0_1">107 (8.9%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">470 (8.7%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Native Hawaiian/Other Pacific Islander</td>
+<td class="gt_row gt_center" headers="stat_0_1">4 (0.3%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">20 (0.4%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
+<td class="gt_row gt_center" headers="stat_0_1">983 (82%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">4,379 (81%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;(Missing)</td>
+<td class="gt_row gt_center" headers="stat_0_1">138</td>
+<td class="gt_row gt_center" headers="stat_0_2">689</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Students with Disabilities (SWD)</td>
+<td class="gt_row gt_center" headers="stat_0_1">229 (17%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">1,894 (31%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">English Language Learners (EL)</td>
+<td class="gt_row gt_center" headers="stat_0_1">188 (14%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">1,552 (25%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Stratification Groups</td>
+<td class="gt_row gt_center" headers="stat_0_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_0_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;EL &amp; SWD</td>
+<td class="gt_row gt_center" headers="stat_0_1">23 (1.7%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">128 (2.1%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;EL only</td>
+<td class="gt_row gt_center" headers="stat_0_1">165 (12%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">1,424 (23%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not EL or SWD</td>
+<td class="gt_row gt_center" headers="stat_0_1">948 (71%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">2,778 (46%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;SWD only</td>
+<td class="gt_row gt_center" headers="stat_0_1">206 (15%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">1,766 (29%)</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
+<td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> n (%)</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<p><a href="#top">(Back to Table of Contents)</a></p>
+</section>
+</section>
+<section id="research-team" class="level1">
+<h1>Research Team</h1>
+<p>The <a href="https://jnese.github.io/coreprosody/research_team.html">research team</a> comprised four faculty with expertise in the assessment of students’ reading fluency (specializations included: two doctorates in School Psychology, one doctorate in Educational Leadership with a specialization in Learning Assessment/Systems Performance, and one doctorate in Educational Psychology), and one graduate research assistant with experience in literacy. The research team met weekly from August through November 2020, to refine a prosody scoring rubric, score audio files to be used as training and demonstration exemplars, and develop two online sessions to train prosody raters. These sessions were delivered live as well as recorded for asynchronous delivery for raters who were unable to attend in person.</p>
+<p><a href="#top">(Back to Table of Contents)</a></p>
+</section>
+<section id="prosody-rubric-development" class="level1">
+<h1>Prosody Rubric Development</h1>
+<p>The research team began with the prosody scoring rubric developed by the National Assessment of Educational Progress (NAEP; <span class="citation" data-cites="NAEP2002">Danne, Campbell, Grigg, Goodman, &amp; Oranje (<a href="#ref-NAEP2002" role="doc-biblioref">2005</a>)</span>), a four-point scale (below) that focuses on phrasing, adherence to the author’s syntax, and expressiveness to assess prosody at Grade 4.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/naep_rubric.png" class="external img-fluid figure-img" width="633"></p>
+<figcaption>From <a href="https://nces.ed.gov/nationsreportcard/pdf/studies/2006469.pdf">Daane, Campbell, Grigg, Goodman, &amp; Oranje (2005)</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Although NAEP only applied the scoring rubric to Grade 4, our research team made the decision to use the rubric across Grades 2 through 4, independent of grade and based on the absolute prosody criteria specified for each of the four prosody levels.</p>
+<p>To help draw clear differences between the four prosody levels across grades, parts of the Multi-Dimensional Fluency Scoring Guide (MFSG; <span class="citation" data-cites="rasinski2009">Rasinski, Rikli, &amp; Johnston (<a href="#ref-rasinski2009" role="doc-biblioref">2009</a>)</span>) were incorporated into the original NAEP rubric.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mfsg_rubric.png" class="external img-fluid figure-img" width="495"></p>
+<figcaption>From <a href="https://www.tandfonline.com/doi/pdf/10.1080/19388070802468715">Rasinski, Rikli, &amp; Johnston (2009)</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The MFSG focuses on assessing aspects of expression, phrasing, smoothness, pacing, and accuracy. The research team expanded and refined the NAEP prosody rubric with select parts of the MFSG to add more specific language and examples.</p>
+<p>A systematic process for adapting the NAEP rubric was conducted in August and September, 2020. First, 30 audio recordings were dispersed among the research team and scored individually by the four faculty. These scores and commentary were documented, analyzed, and discussed during the following week’s meetings. A summary of the team’s individual scores was presented, highlighting areas of agreement and disagreement: 9 audio files (30%) received the same score across all four raters; 13 (43%) received the same score across three raters with the fourth rating different by one prosody level; 4 (13%) were split down the middle, with two sets of identical scores that differed by one prosody level; and 4 (13%) received three different prosody scores, two of which were scored the same and two of which differed by two prosody levels. Based on inconsistent variation within the team, it was decided that more in-depth explanation was needed for each of the score levels.</p>
+<p>To achieve this goal, the team listened to recordings together during online meetings and iteratively specified deeper distinctions between adjacent scores using the MFSG factors of pace, phrasing, and expression and volume. The 30 audio recordings were again scored individually by the four faculty: 12 (40%) audio files (30%) received the same score across all four raters; 12 (40%) received the same score across three raters, with the fourth rating different by one prosody level; and 6 (20%) were split down the middle, with two sets of identical scores that differed by one prosody level.</p>
+<p>The team further refined the adapted rubric to clarify rating criteria and arrive at more unequivocal prosody scores. That is, the first version of the adapted rubric did not address whether the overall storyline was “represented” by the reader. After working through various examples, the research team added the following distinctions for each proficiency level (italic text represents additions from the MFSG, and regular text represents additions made by the research team).</p>
+<ul>
+<li><strong>Level 1</strong>: <em>Reads slowly and laboriously.</em> Story line is incoherent.</li>
+<li><strong>Level 2</strong>: <em>Reads moderately slowly.</em> Overall meaning of the text is preserved.</li>
+<li><strong>Level 3</strong>: <em>Reads with a mixture of run-ons, mid-sentence pauses for breath, and some choppiness. There is reasonable stress and intonation.</em></li>
+<li><strong>Level 4</strong>: <em>Reads smoothly with some breaks, but self-corrects with difficult words and/or sentence structures. Reads with varied volume and expression (like talking to a friend with voice matching the interpretation of the passage).</em></li>
+</ul>
+<section id="the-core-prosody-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-prosody-rubric">The CORE + Prosody Rubric</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/core-ii_rubric.png" class="img-fluid figure-img" width="718"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplar-audio-files" class="level2">
+<h2 class="anchored" data-anchor-id="exemplar-audio-files">Exemplar Audio Files</h2>
+<p>After finalizing the refined rubric, the research team came to unanimous agreement on the 30 audio files. Then, additional audio files were sought with the goal of having 15 exemplar audio files for each of the four prosody levels. ORF data from the CORE project were used to find (de-identified) students whose fall easyCBM ORF scores clustered around a specified percentile; for example, students who scored at or below the 20th percentile as potential candidates for prosody scores of Levels 1 or 2, and students who scored above the 90th percentile as potential candidates for a prosody score of Level 4. Using this process, the team identified an additional 31 audio files, each of which were independently scored by two of the five research team personnel. Of these, 21 (68%) received the same score across the two raters. The remaining 10 audio files were scored by a third member of the research team, and discussed by the full research team until unanimous score agreement was achieved. Additional exemplar audio files were still needed for Levels 2 and 4, so 16 additional files were identified and underwent the same process just described.</p>
+<p>In total, 81 passages were identified and scored by the research team as exemplars for trainings and demonstrations: 20 at Level 4, 23 at Level 3, 15 at Level 2, and 23 at Level 1. Of these, 24 were used for Training, 25 were used for Certification (both described below), and the remaining 32 were retained in case of future need.</p>
+<p>Human prosody raters were recruited and required to complete two <a href="https://jnese.github.io/coreprosody/human_prosody_scoring.html#training-development-implementation">Training Sessions</a>, and meet <a href="https://jnese.github.io/coreprosody/human_prosody_scoring.html#prosody-certification">Prosody Certification</a> criterion.</p>
+<p><a href="#top">(Back to Table of Contents)</a></p>
+</section>
+</section>
+<section id="prosody-rater-recruitment" class="level1">
+<h1>Prosody Rater Recruitment</h1>
+<p>Educators (teachers and specialized professionals) were targeted as potential prosody raters. Potential prosody raters were recruited in October – November 2020 from two sources: teacher participants from the original CORE project, and through an announcement placed on the easyCBM - Lite and Deluxe sites for three weeks (10/19/2020 – 11/6/2020). These two easyCBM sites have over 79,000 registered users.</p>
+<!-- > Paid Opportunity! -->
+<!-- > * We're looking for Grade 2-5 teachers interested in earning a little extra money scoring oral reading for prosody (expressiveness). -->
+<!-- > * All work can be done remotely on your own time. -->
+<!-- > * No prior experience scoring prosody needed (we'll provide the training). -->
+<!-- > * The more readings you score, the more money you will earn! -->
+<!-- > * This project is part of an IES-funded research study to develop computer-scored oral reading fluency measures. -->
+<!-- > * For more information, please email: -------@easycbm.com -->
+<p>Approximately 300 people responded to the announcement posted on the easyCBM sites. These respondents were then sent an email introducing them to the project, the task required of them, what they could expect (payment terms, remote work, and work commitment), training requirements, the prosody certification process, and next steps (a Qualtrics Registration form requiring demographic information, teaching experience, and a W9). <!-- Please see [Appendix A](link to section) for the introduction email. --> The PI (J. F. T. Nese) corresponded with all potential prosody raters throughout the process.</p>
+<p>Of the 300 respondents, 119 completed the Registration form, and 78 completed the required trainings. (No information is available as to why some chose not to complete the Registration or the trainings.)</p>
+</section>
+<section id="prosody-certification" class="level1">
+<h1>Prosody Certification</h1>
+<p>Prior to starting work, each prosody rater was required to complete the Training and demonstrate scoring proficiency by obtaining 80% or higher agreement with the research team’s pre-determined rating on two different sets of five audio files. Raters had five opportunities to achieve at least 80% (4/5) on two of the prosody assessments. Raters unable to achieve two passing scores received payment for their participation in training ($45) but were not eligible to continue their participation in this project.</p>
+<p>All Prosody Certification Assessments were delivered with Google Forms’ Quiz feature. All participants took the first Prosody Certification after Training #1 and before Training #2. The remaining Prosody Certification assessments were taken at each participant’s pace. Once a participant met the prosody certification criteria by scoring at least 80% on two assessments, they began scoring audio files (and took no more assessments).</p>
+<p>Of the 78 people who completed the <a href="https://jnese.github.io/coreprosody/human_prosody_scoring.html#training-development-implementation">Trainings</a>, 63 (81%) met prosody certification, 2 (3%) failed to meet certification, and 13 (17%) did not complete the certification process.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="wopddayahi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wopddayahi table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wopddayahi thead, #wopddayahi tbody, #wopddayahi tfoot, #wopddayahi tr, #wopddayahi td, #wopddayahi th {
+  border-style: none;
+}
+
+#wopddayahi p {
+  margin: 0;
+  padding: 0;
+}
+
+#wopddayahi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wopddayahi .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wopddayahi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wopddayahi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wopddayahi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wopddayahi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wopddayahi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wopddayahi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wopddayahi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wopddayahi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wopddayahi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wopddayahi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wopddayahi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wopddayahi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wopddayahi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wopddayahi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wopddayahi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wopddayahi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wopddayahi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wopddayahi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wopddayahi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wopddayahi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wopddayahi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wopddayahi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wopddayahi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wopddayahi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wopddayahi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wopddayahi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wopddayahi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wopddayahi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wopddayahi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wopddayahi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wopddayahi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wopddayahi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wopddayahi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wopddayahi .gt_left {
+  text-align: left;
+}
+
+#wopddayahi .gt_center {
+  text-align: center;
+}
+
+#wopddayahi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wopddayahi .gt_font_normal {
+  font-weight: normal;
+}
+
+#wopddayahi .gt_font_bold {
+  font-weight: bold;
+}
+
+#wopddayahi .gt_font_italic {
+  font-style: italic;
+}
+
+#wopddayahi .gt_super {
+  font-size: 65%;
+}
+
+#wopddayahi .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wopddayahi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wopddayahi .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wopddayahi .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wopddayahi .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wopddayahi .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wopddayahi .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#wopddayahi .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wopddayahi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border">Prosody Certification Assessment Passing Rates</td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="test" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n</th>
+<th id="Fail" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fail</th>
+<th id="Fail-(%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fail (%)</th>
+<th id="Pass" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Pass</th>
+<th id="Pass-(%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Pass (%)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="test">Certification #1</td>
+<td class="gt_row gt_right" headers="n">78</td>
+<td class="gt_row gt_right" headers="Fail">37</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">47%</td>
+<td class="gt_row gt_right" headers="Pass">41</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">53%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="test">Certification #2</td>
+<td class="gt_row gt_right" headers="n">73</td>
+<td class="gt_row gt_right" headers="Fail">20</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">27%</td>
+<td class="gt_row gt_right" headers="Pass">53</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">73%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="test">Certification #3</td>
+<td class="gt_row gt_right" headers="n">41</td>
+<td class="gt_row gt_right" headers="Fail">6</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">15%</td>
+<td class="gt_row gt_right" headers="Pass">35</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">85%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="test">Certification #4</td>
+<td class="gt_row gt_right" headers="n">10</td>
+<td class="gt_row gt_right" headers="Fail">5</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">50%</td>
+<td class="gt_row gt_right" headers="Pass">5</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">50%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="test">Certification #5</td>
+<td class="gt_row gt_right" headers="n">4</td>
+<td class="gt_row gt_right" headers="Fail">1</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">25%</td>
+<td class="gt_row gt_right" headers="Pass">3</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">75%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Of the 78 people who took Certification #1, 53% passed by scoring 4 or 5; 73% of the 73 people who took Certification #2 passed; 85% of the 41 people who took Certification #3 passed; 50% of the 10 people who took Certification #4 passed; and 75% of the 4 people who took Certification #5 passed.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="human_prosody_scoring_files/figure-html/traincert_plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="training-development-implementation" class="level1">
+<h1>Training Development &amp; Implementation</h1>
+<p>A two-session training for prosody raters was developed for in-person, online delivery across two meetings in November 2020. Each Training Session was delivered twice: on Friday and the subsequent Monday afternoon (after the school day had concluded), and participants could attend either the Friday or the Monday training. There was one week between Training Session #1 and Session #2. For Training Session #1, Day 1 was held on 11/13/2020 and Day 2 was held on 11/16/2020. For Training Session #2, Day 1 was held on 11/20/2020 and Day 2 was held on 11/23/2020.</p>
+<p>Three members of the team were present to deliver content and answer questions using Powerpoint slides presented on the Zoom platform for web-based, live interaction. All trainings were recorded via Zoom for asynchronous training for participants who could not attend one or both of the live trainings. In total, 78 people completed the trainings.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="ssoljfnzqi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ssoljfnzqi table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ssoljfnzqi thead, #ssoljfnzqi tbody, #ssoljfnzqi tfoot, #ssoljfnzqi tr, #ssoljfnzqi td, #ssoljfnzqi th {
+  border-style: none;
+}
+
+#ssoljfnzqi p {
+  margin: 0;
+  padding: 0;
+}
+
+#ssoljfnzqi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ssoljfnzqi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ssoljfnzqi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ssoljfnzqi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ssoljfnzqi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ssoljfnzqi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ssoljfnzqi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ssoljfnzqi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ssoljfnzqi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ssoljfnzqi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ssoljfnzqi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ssoljfnzqi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ssoljfnzqi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ssoljfnzqi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ssoljfnzqi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ssoljfnzqi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ssoljfnzqi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ssoljfnzqi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ssoljfnzqi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ssoljfnzqi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ssoljfnzqi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ssoljfnzqi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ssoljfnzqi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ssoljfnzqi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ssoljfnzqi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ssoljfnzqi .gt_left {
+  text-align: left;
+}
+
+#ssoljfnzqi .gt_center {
+  text-align: center;
+}
+
+#ssoljfnzqi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ssoljfnzqi .gt_font_normal {
+  font-weight: normal;
+}
+
+#ssoljfnzqi .gt_font_bold {
+  font-weight: bold;
+}
+
+#ssoljfnzqi .gt_font_italic {
+  font-style: italic;
+}
+
+#ssoljfnzqi .gt_super {
+  font-size: 65%;
+}
+
+#ssoljfnzqi .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ssoljfnzqi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ssoljfnzqi .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ssoljfnzqi .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ssoljfnzqi .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ssoljfnzqi .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ssoljfnzqi .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ssoljfnzqi .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ssoljfnzqi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Training Sessions Attendance</td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="Training-Session" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Training Session</th>
+<th id="Day-1" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Day 1</th>
+<th id="Day-2" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Day 2</th>
+<th id="Asynchronous" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Asynchronous</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Training Session">Session #1</td>
+<td class="gt_row gt_right" headers="Day 1">35</td>
+<td class="gt_row gt_right" headers="Day 2">35</td>
+<td class="gt_row gt_right" headers="Asynchronous">8</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Training Session">Session #2</td>
+<td class="gt_row gt_right" headers="Day 1">34</td>
+<td class="gt_row gt_right" headers="Day 2">35</td>
+<td class="gt_row gt_right" headers="Asynchronous">9</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>The research team created a <a href="https://jnese.github.io/CORE-II_trainingwebsite/index.html">website</a> for participants to access training resources. The website included: the <a href="https://jnese.github.io/CORE-II_trainingwebsite/#the-task">seven-step process</a> for scoring audio files; the <a href="https://jnese.github.io/CORE-II_trainingwebsite/prosody_rubric.html">prosody rubric</a> as a resource to print or keep open when rating; <a href="https://jnese.github.io/CORE-II_trainingwebsite/training_materials.html">training materials</a>, including the presentation slides, and a recording of each Training Session; the 24 <a href="https://jnese.github.io/CORE-II_trainingwebsite/exemplar_audiofiles.html">exemplar audio files</a> from Training Session #1; the link to the scoring site; and an <a href="https://ies.ed.gov/funding/grantsearch/details.asp?ID=34270">About</a> page with information about the study.</p>
+<section id="training-session-1" class="level2">
+<h2 class="anchored" data-anchor-id="training-session-1">Training Session #1</h2>
+<p>During Training Session #1 (2 hours), study logistics and key concepts were explained to potential raters. <a href="https://jnese.github.io/CORE-II_trainingwebsite/CORE_training_session1day2_FINAL.pdf">Training</a> included: information about the project context; a comprehensive review of prosody; the task of rating audio recordings for prosody; an explanation of the rubric and how to rate recordings; how to earn certification as prosody rater; the expectations and payment structure; a set of 12 exemplar audio files (about one recording per prosody level for each of Grades 2 – 4); and a practice exercise, consisting of 12 exemplar audio files (three at each of the four prosody levels presented randomly) followed by a discussion of each and the qualities that made it a specific prosody level.</p>
+<p>Participants were also introduced to prosody scoring in partial increments of 0.5 to facilitate prosody ratings in cases of nuanced uncertainty. For example, if a rater’s prosody rating was undecided between Level 2 and 3, they could score it as a 2.5. For the purposes of the study, all half scores (i.e., 1.5, 2.5, and 3.5) were rounded down because they did not meet the threshold for a higher score.</p>
+<p>The Training Session #1 practice exercise involved three rounds of listening to each audio file. The purpose of the first listen was to pay attention to the passage’s general meaning so that raters would have a general sense of what the passage was about and the degree to which the student’s reading conveyed the meaning. The purpose of the second listen was to train raters to pay attention to reading style (i.e., word-by-word, awkward word groups, conversational) and to notice whether the author’s syntax was preserved. The third listen was used to train raters to pay attention to expressiveness. This step-by-step process was designed to train raters to attend to all aspects of the rubric, and not to focus exclusively on any single aspect. The team developed a seven-step guide for listening to and scoring audio recordings.</p>
+<section id="the-task" class="level4">
+<h4 class="anchored" data-anchor-id="the-task">The Task</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/task_7steps.png" class="external img-fluid figure-img" width="523"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>After listening to example recordings to clarify the scale, participants were able to practice on their own. Recordings were played, and participants were asked to first think about how they would rate the recording without sharing their scores, and then they were prompted to type their prosody score for the recorded reading into the Zoom platform’s chat box feature. Participants’ reasoning for scores was discussed as a large group with research team members facilitating the discussion and using the rubric to emphasize points made.</p>
+<p>After Training Session #1, participants were given the first Prosody Certification assessment, which consisted of five audio files to be scored individually, on their own time, before Training Session #2.</p>
+<p>Of the 78 people who took the Prosody Certification Assessment #1, 41 (53%) passed and 37 (47%) did not. Note that Certification #1 was taken after Training Session #1, before the entire Training process was complete.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="human_prosody_scoring_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="training-session-2" class="level2">
+<h2 class="anchored" data-anchor-id="training-session-2">Training Session #2</h2>
+<p>One week later, participants again met with the research team for Training Session #2 (1.5 hours). Training Session #2 consisted primarily of a review of the five audio files from Prosody Certification #1. Participants were asked to listen to an audio file, with the prosody score provided by the training facilitator, and to identify key features that justified the score. After listening to an audio file, they were asked to share in the Zoom platform’s chat box prosody rubric features (shown on the screen) of the reading that corresponded to the score. The training facilitator read aloud and discussed the relevant and important prosody score features, using the rubric to confirm scores with participants. Participants were encouraged to ask questions if they did not understand or disagreed with the prosody score. Each audio file was played multiple times (three to six) to solidify the score and rationale for the attendees. This process was repeated for each of the five audio files.</p>
+<p>Participants were then given an <a href="https://jnese.github.io/CORE-II_trainingwebsite/CORE_training_session2day2_FINAL.pdf">introduction</a> to and demonstration of the software that they would use to score the audio files for prosody if they met certification. They were also introduced to the <a href="https://jnese.github.io/CORE-II_trainingwebsite/index.html">training website</a>.</p>
+<p><a href="#top">(Back to Table of Contents)</a></p>
+</section>
+</section>
+<section id="prosody-rating-procedures" class="level1 page-columns page-full">
+<h1>Prosody Rating Procedures</h1>
+<section id="prosody-raters-sample" class="level2">
+<h2 class="anchored" data-anchor-id="prosody-raters-sample">Prosody Raters: Sample</h2>
+<p>The final prosody sample included 56 prosody raters, 7 from each of FL and IL, 4 from each of OR, 3 from each of IN, KS, NV and OH, 2 from each of GA, ID, KY, MI, NC and VA, and 1 from each of AL, AZ, CA, CO, LA, MT, NM, NY, PA, SC, TN, TX, UT and WA. Nearly all (54) raters were female, 1 was non-binary, and 1 chose not to response.</p>
+<section id="highest-degree-earned" class="level4">
+<h4 class="anchored" data-anchor-id="highest-degree-earned">Highest Degree Earned</h4>
+<p>Among the prosody raters, 32 (57%) earned a Masters in education, 18 (32%) earned a Bachelor, 2 (4%) earned a Masters in another field, 2 (4%) earned an Associate, and 2 (4%) earned a Doctorate.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="human_prosody_scoring_files/figure-html/degree_plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="professional-roles" class="level4">
+<h4 class="anchored" data-anchor-id="professional-roles">Professional Roles</h4>
+<p>The professional roles of the raters were as follows:</p>
+<ul>
+<li><p>16 (29%) were special education teachers</p></li>
+<li><p>13 (23%) were general education teachers</p></li>
+<li><p>10 (18%) were reading/literacy specialists</p></li>
+<li><p>9 (16%) reported as “other”</p>
+<ul>
+<li>(i.e., dyslexia program specialist; literacy tutor/data analyst/testing coordinator; project consultant supporting literacy, behavior and MTSS; RTI coordinator/interventionist; RTI specialist; MTSS lead; EC compliance case manager; Master’s student; and undergraduate student studying elementary education)</li>
+</ul></li>
+<li><p>3 (5%) reported as “school psychologist | social worker | counselor | behavior specialist | etc.”</p></li>
+<li><p>2 (4%) reported as “administrator | principal | district support”</p></li>
+<li><p>2 (4%) were retired, and reported their role as special educators before retirement</p></li>
+<li><p>1 (2%) an “other content area specialist” (i.e., ESOL)</p></li>
+</ul>
+</section>
+<section id="experience" class="level4">
+<h4 class="anchored" data-anchor-id="experience">Experience</h4>
+<p>Nearly all of the prosody raters (<em>n</em> = 47, 84%) worked at the elementary school level, 4 (7%) worked at the middle school level, 2 (4%) worked at the high school level, 1 (2%) worked at the elementary and middle levels, 1 (2%) worked at all three levels, and 1 (2%) worked with adults.</p>
+<p>The average years experience as an educator was 14 years (<em>SD</em> = 9.9).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="human_prosody_scoring_files/figure-html/experience_plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#top">(Back to Table of Contents)</a></p>
+</section>
+</section>
+<section id="prosody-raters-certification" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="prosody-raters-certification">Prosody Raters: Certification</h2>
+<p>All 56 prosody raters met the prosody certification criteria by scoring at least 80% on two Prosody Certification Assessments. Note that Certification #1 was taken after Training Session #1, before the Training was complete.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="gpcslutcud" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gpcslutcud table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gpcslutcud thead, #gpcslutcud tbody, #gpcslutcud tfoot, #gpcslutcud tr, #gpcslutcud td, #gpcslutcud th {
+  border-style: none;
+}
+
+#gpcslutcud p {
+  margin: 0;
+  padding: 0;
+}
+
+#gpcslutcud .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gpcslutcud .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gpcslutcud .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gpcslutcud .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gpcslutcud .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gpcslutcud .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gpcslutcud .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gpcslutcud .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gpcslutcud .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gpcslutcud .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gpcslutcud .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gpcslutcud .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gpcslutcud .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gpcslutcud .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gpcslutcud .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gpcslutcud .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gpcslutcud .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gpcslutcud .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gpcslutcud .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gpcslutcud .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gpcslutcud .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gpcslutcud .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gpcslutcud .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gpcslutcud .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gpcslutcud .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gpcslutcud .gt_left {
+  text-align: left;
+}
+
+#gpcslutcud .gt_center {
+  text-align: center;
+}
+
+#gpcslutcud .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gpcslutcud .gt_font_normal {
+  font-weight: normal;
+}
+
+#gpcslutcud .gt_font_bold {
+  font-weight: bold;
+}
+
+#gpcslutcud .gt_font_italic {
+  font-style: italic;
+}
+
+#gpcslutcud .gt_super {
+  font-size: 65%;
+}
+
+#gpcslutcud .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gpcslutcud .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gpcslutcud .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gpcslutcud .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gpcslutcud .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gpcslutcud .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gpcslutcud .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#gpcslutcud .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#gpcslutcud div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border">Prosody Certification Assessment Passing Rates</td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="test" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n</th>
+<th id="Fail" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fail</th>
+<th id="Fail-(%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fail (%)</th>
+<th id="Pass" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Pass</th>
+<th id="Pass-(%)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Pass (%)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="test">Certification #1</td>
+<td class="gt_row gt_right" headers="n">56</td>
+<td class="gt_row gt_right" headers="Fail">25</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">45%</td>
+<td class="gt_row gt_right" headers="Pass">31</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">55%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="test">Certification #2</td>
+<td class="gt_row gt_right" headers="n">54</td>
+<td class="gt_row gt_right" headers="Fail">11</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">20%</td>
+<td class="gt_row gt_right" headers="Pass">43</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">80%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="test">Certification #3</td>
+<td class="gt_row gt_right" headers="n">30</td>
+<td class="gt_row gt_right" headers="Fail">2</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">7%</td>
+<td class="gt_row gt_right" headers="Pass">28</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">93%</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="test">Certification #4</td>
+<td class="gt_row gt_right" headers="n">6</td>
+<td class="gt_row gt_right" headers="Fail">2</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">33%</td>
+<td class="gt_row gt_right" headers="Pass">4</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">67%</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="test">Certification #5</td>
+<td class="gt_row gt_right" headers="n">2</td>
+<td class="gt_row gt_right" headers="Fail">0</td>
+<td class="gt_row gt_right" headers="Fail (%)" style="color: #D55E00">0%</td>
+<td class="gt_row gt_right" headers="Pass">2</td>
+<td class="gt_row gt_right" headers="Pass (%)" style="color: #0072B2">100%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Of the 56 people who took Certification #1, 55% passed by scoring 4 or 5; 80% of the 54 people who took Certification #2 passed; 93% of the 30 people who took Certification #3 passed; 67% of the 6 people who took Certification #4 passed; and 100% of the 2 people who took Certification #5 passed.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="human_prosody_scoring_files/figure-html/raterscert_fig-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot below shows which two Prosody Certification Assessments the raters met prosody certification. Twenty-five raters (45%) passed Certification #1 and Certification #2, 17 (30%) passed Certification #2 and Certification #3, 6 (11%) passed Certification #1 and Certification #3, 4 (7%) passed Certification #3 and Certification #4, 1 (2%) passed Certification #2 and Certification #5, and 1 (2%) passed Certification #3 and Certification #5.</p>
+<div class="page-columns page-full">
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div class="page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="human_prosody_scoring_files/figure-html/upset_fig-1.png" class="img-fluid figure-img column-body-outset" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><a href="#top">(Back to Table of Contents)</a></p>
+</section>
+<section id="prosody-ratings" class="level2">
+<h2 class="anchored" data-anchor-id="prosody-ratings">Prosody Ratings</h2>
+<p>The 56certified prosody raters created a profile on a project-designed Moodle site. Raters each created their own log-in information for the system. The system allowed raters to skip audio files, go back and change scores, and complete the rating in multiple sessions, stopping and re-starting as needed. In addition to the seven-point prosody scale (1, 1.5, 2, 2.5, 3, 3.5, 4), raters were also given an option to note “No audio available to score” in case there was no audio (e.g., the student was muted or advanced without reading) or the audio did not allow the rater to confidently give a score (e.g., poor audio quality, too much background noise, a very quiet reader).</p>
+<p>The prosody raters were instructed to first complete a Prosody Review containing four exemplar files, one at each prosody level (i.e, 1, 2, 3, 4), prior to rating their first set of audio files. The expectation was set in training that raters must complete a minimum of 50 audio files; there was no maximum. Upon completion of the first set of recordings, raters emailed PI Nese to receive another set of recordings to rate.</p>
+<p>In this manner, all 6,096 audio recordings were rated by two different prosody raters from November 28, 2020 through February 8, 2021, for a total of 12,192 human prosody scores.</p>
+<p>The median number of audio files scored by prosody raters was 160, with a range from 38 to 747 (<em>Mean</em> = 218, <em>SD</em> = 177).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="human_prosody_scoring_files/figure-html/ratefiles_fig-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#top">(Back to Table of Contents)</a></p>
+</section>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section id="acknowledgments" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Acknowledgments</h2><div class="quarto-appendix-contents">
+
+<p>The research reported here was supported by the Institute of Education Sciences, U.S. Department of Education, through Grant <a href="https://ies.ed.gov/funding/grantsearch/details.asp?ID=3427">R305A200018</a> to University of Oregon. The opinions expressed are those of the authors and do not represent views of the Institute or the U.S. Department of Education.</p>
+
+
+
+</div></section><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-NAEP2002" class="csl-entry" role="listitem">
+Danne, M. C., Campbell, J. R., Grigg, W. S., Goodman, M. J., &amp; Oranje, A. (2005). Fourth-grade students reading aloud: NAEP 2002 special study of oral reading. The nation’s report card. NCES 2006-469. <em>National Center for Education Statistics</em>. Retrieved from <a href="https://files.eric.ed.gov/fulltext/ED488962.pdf">https://files.eric.ed.gov/fulltext/ED488962.pdf</a>
+</div>
+<div id="ref-rasinski2009" class="csl-entry" role="listitem">
+Rasinski, T., Rikli, A., &amp; Johnston, S. (2009). Reading fluency: More than automaticity? More than a concern for the primary grades? <em>Literacy Research and Instruction</em>, <em>48</em>(4), 350–361. <a href="https://doi.org/10.1080/19388070802468715">https://doi.org/10.1080/19388070802468715</a>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/jnese\.github\.io\/coreprosody\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>The research reported here was supported by the <a href="https://ies.ed.gov/">Institute of Education Sciences</a>, U.S. Department of Education, through Grant <a href="https://ies.ed.gov/funding/grantsearch/details.asp?ID=3427">R305A200018</a> to University of Oregon. The opinions expressed are those of the authors and do not represent views of the Institute or the U.S. Department of Education.</p>
+<p>© Copyright 2026 Joseph F. T. Nese and the <a href="https://www.uoregon.edu/">University of Oregon</a>.</p>
+<p>Software licensed under the <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons, v4.0</a>.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
