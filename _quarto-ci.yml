@@ -1,0 +1,5 @@
+project:
+  render:
+    - "*.qmd"
+    - "!feasibility.qmd"
+    - "!human_prosody_scoring.qmd"
