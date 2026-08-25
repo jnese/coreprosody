@@ -74,7 +74,7 @@ tibble(
   knitr::kable(col.names = NULL)
 ```
 
-Leilani is a Research Assistant Professor in the College of Education at the University of Oregon. She obtained her Ph.D. in Educational Psychology from the University of California, Riverside.She has been the Principal or Co-Principal Investigator of nearly \$3 million dollars in federally funded projects, and more than \$50,000 in internal funding, to support teachers’ assessment-guided decision-making for preventing reading difficulties and enhance children’s reading development.
+Leilani was a Research Assistant Professor in the College of Education at the University of Oregon. She obtained her Ph.D. in Educational Psychology from the University of California, Riverside.She has been the Principal or Co-Principal Investigator of nearly \$3 million dollars in federally funded projects, and more than \$50,000 in internal funding, to support teachers’ assessment-guided decision-making for preventing reading difficulties and enhance children’s reading development.
 
 Leilani has extensive experience working in classroom settings, particularly in the area of literacy instruction, including teaching, observation, and quantitative research. As Co-PI of CORE + Prosody, Leilani shares responsibility for all aspects of the project, leads the development of the reading comprehension questions, and co-leads the Comprehension & Cognitive Load Studies.
 
@@ -152,6 +152,8 @@ Xinyi is an Assistant Professor in the Department of Computer Science and Techno
 ----
 
 ```{r noboru, results="asis"}
+#| eval: false
+
 tibble(
   image = "<img src='images/matsuda.jpg' style='border-radius: 50%; width: 100px'>",
   name = "[**Noboru Matsuda, Ph.D.**](https://people.engr.ncsu.edu/nmatsud/)<a href='mailto:noboru.matsuda@ncsu.edu'> <i class='fa fa-envelope'></i></a><br>Artificial Intelligence Consultant<br>",
@@ -160,9 +162,9 @@ tibble(
   knitr::kable(col.names = NULL)
 ```
 
-Noboru is an Associate Professor of Computer Science and a Director of the Innovative Educational Computing Laboratory at North Carolina State University, whose research focus is on technology innovation and integration to of Artificial Intelligence technologies to advance the sciences of learning. Noboru was awarded an IES grant to develop an online learning environment to learn to solve liner algebra equations by teaching a synthetic peer (aka a teachable agent), called SimStudent, and an intervention called APLUS (Artificial Peer Learning environment Using SimStudent). His scholarly expertise spans education, learning science, cognitive science, and computer science.
+<!-- Noboru is an Associate Professor of Computer Science and a Director of the Innovative Educational Computing Laboratory at North Carolina State University, whose research focus is on technology innovation and integration to of Artificial Intelligence technologies to advance the sciences of learning. Noboru was awarded an IES grant to develop an online learning environment to learn to solve liner algebra equations by teaching a synthetic peer (aka a teachable agent), called SimStudent, and an intervention called APLUS (Artificial Peer Learning environment Using SimStudent). His scholarly expertise spans education, learning science, cognitive science, and computer science. -->
 
-Noboru will consult with CORE + Prosody investigators on the machine learning aspects of the Automated Prosody Scoring Study (e.g., feature selection, convolutional network) and the automatic speech recognition (ASR) Development. 
+<!-- Noboru will consult with CORE + Prosody investigators on the machine learning aspects of the Automated Prosody Scoring Study (e.g., feature selection, convolutional network) and the automatic speech recognition (ASR) Development.  -->
 
 ----
 
@@ -210,3 +212,20 @@ tibble(
 Makayla is a master's student in the department of Educational Methodology, Policy, and Leadership at the University of Oregon. Her thesis is focused on creating a reading assessment for illiterate adults that includes aspects of comprehension. She received her a bachelor's degree from Humboldt State University in Anthropology with focuses in Linguistics and Teaching English as a Second Language (ESL). Her background is in adult literacy, ESL studies, adult assessments, and reading materials.
 
 For CORE + Prosody, Makayla assisted with the development of the prosody rubric and worked as a prosody rater in the [Human Rated Prosody Study](https://jnese.github.io/coreprosody/human_prosody_scoring.html#prosody-rating-procedures).
+
+----
+
+```{r nafisul, results="asis"}
+tibble(
+  image = "<img src='images/nafisul.jpg' style='border-radius: 50%; width: 100px'>",
+  name = "**Nafisul Huq**<a href='mailto:nhuq@uoregon.edu'> <i class='fa fa-envelope'></i></a><br>Graduate Researcher<br>",
+  univ = "<img src='images/UOSignature-BAR-3435.jpg' style='border-radius: 0; width: 100px'>"
+) %>% 
+  knitr::kable(col.names = NULL)
+```
+
+Nafisul Huq is a Master’s student in Data Science at the University of Oregon. His research focuses on psychometrics and quantitative measurement.
+
+For Core + Prosody, Nafisul collaborated with Dr. Joe Nese to
+assess the [feasibility of use](https://jnese.github.io/coreprosody/feasibility.html) of the project’s ORF estimates.
+

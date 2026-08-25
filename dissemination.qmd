@@ -89,9 +89,7 @@ to three reading prosody components: intonation, amplitude, and timing.
 ----
 
 <p style="text-indent: -36px; padding-left: 36px; color:#6699AC;">
-
 **Kuo Wang, Xin Qiao, George Sammit, Eric C. Larson, Joe Nese, and Akihito Kamata (2023, April). `r embed_file_quarto(path = here::here("pubs", "KuoWang_NCME2023_FinalPaper.pdf"), text = "Improving Automated Scoring of Prosody Using Deep Learning Algorithm.")` Presented at National Council for Measurement in Education (NCME), Chicago, IL.**
-
 </p>
 
 <font size="-0.5">
